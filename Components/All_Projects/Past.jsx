@@ -1,12 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
+import { projectsPage } from '@/data/projects'
 
 const Past = () => {
   return (
-    <section className='px-30 py-10 mx-auto'>
-        <h1 className='text-2xl font-semibold text-[#0b3a72] pb-2 border-b border-b-[#f1f2f3]'>Past Projects</h1>
-        <p className='pt-2'>
-            These are some of the past projects we've worked on:
+    <section className='mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:px-12'>
+        <h2 className='border-b border-b-slate-200 pb-3 text-2xl font-semibold text-[#0b3a72]'>{projectsPage.pastTitle}</h2>
+        <p className='pt-4 leading-7 text-slate-700'>
+            {projectsPage.pastDescription}
         </p>
     </section>
   )

@@ -1,123 +1,45 @@
-import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link'
-import { professors, grads, undergrads, pastmembers } from '@/Assets/assets';
+import { memberGroups } from '@/data/members';
+
+const MemberCard = ({ person }) => (
+  <Link href={person.link} className="group block">
+    <article className="rounded-lg border border-slate-200 px-5 py-5 transition duration-200 hover:border-[#7b94b6] hover:bg-slate-50 hover:shadow-sm">
+      <div className="flex items-center">
+        <div className="h-[96px] w-[96px] flex-shrink-0 overflow-hidden rounded-full bg-slate-100">
+          <Image
+            src={person.image}
+            alt={person.name}
+            className="h-full w-full object-cover object-center"
+            sizes="96px"
+          />
+        </div>
+        <div className="ml-5 min-w-0">
+          <h3 className="m-0 font-semibold text-[#002a5c] group-hover:underline">{person.name}</h3>
+          <p className="m-0 text-sm leading-6 text-slate-600">{person.position}</p>
+        </div>
+      </div>
+    </article>
+  </Link>
+)
 
 const Members = () => {
   return (
-    <div className='pl-5 pb-10'>
-    <div className="scroll-mt-20" id="professor">
-      <h1 className='text-3xl text-[#0a1588] font-bold pt-5'>Professors</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 pr-30">
-        {Object.values(professors).map((person, index)=>(
-
-          <Link href={person.link} key={index}>
-          <div className="border border-gray-400 rounded-lg px-5 py-5 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500">
-            <div className="flex box-border items-center">
-                  <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover object-center cursor-pointer"
-                    />
-                  </div>
-                <div className="block ml-5">
-                  <h4 className="m-0 text-[#002a5c] font-semibold">{person.name}</h4>
-                  <p className="m-0 text-[#002a5c]">{person.position}</p>
-                </div>
+    <div className='w-full px-5 pb-10 sm:px-8 lg:pr-12'>
+      {memberGroups.map((group) => (
+        <section className="scroll-mt-24" id={group.id} key={group.id}>
+          <h2 className='pt-8 text-3xl font-bold text-[#0a1588]'>{group.title}</h2>
+          {group.people.length > 0 ? (
+            <div className="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-2">
+              {group.people.map((person) => (
+                <MemberCard person={person} key={person.link || person.name} />
+              ))}
             </div>
-          </div>
-          </Link>
-
-        ))}
-
-      </div>
-    </div>
-
-    <div className="scroll-mt-5" id="grads">
-      <h1 className='text-3xl text-[#0a1588] font-bold pt-20'>Graduate Students</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 pr-30">
-        {Object.values(grads).map((person, index)=>(
-
-          <Link href={person.link} key={index}>
-          <div className="border border-gray-400 rounded-lg px-5 py-5 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500">
-            <div className="flex box-border items-center">
-                  <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover object-center cursor-pointer"
-                    />
-                  </div>
-                <div className="block ml-5">
-                  <h4 className="m-0 text-[#002a5c] font-semibold">{person.name}</h4>
-                  <p className="m-0 text-[#002a5c]">{person.position}</p>
-                </div>
-            </div>
-          </div>
-          </Link>
-
-        ))}
-
-      </div>
-    </div>
-
-    <div className="scroll-mt-5" id="undergrads">
-      <h1 className='text-3xl text-[#0a1588] font-bold pt-20'>Undergraduate Students</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 pr-30">
-        {Object.values(undergrads).map((person, index)=>(
-
-          <Link href={person.link} key={index}>
-          <div className="border border-gray-400 rounded-lg px-5 py-5 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500">
-            <div className="flex box-border items-center">
-                  <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover object-center cursor-pointer"
-                    />
-                  </div>
-                <div className="block ml-5">
-                  <h4 className="m-0 text-[#002a5c] font-semibold">{person.name}</h4>
-                  <p className="m-0 text-[#002a5c]">{person.position}</p>
-                </div>
-            </div>
-          </div>
-          </Link>
-
-        ))}
-
-      </div>
-    </div>
-
-    <div className="scroll-mt-5" id="pastmembers">
-      <h1 className='text-3xl text-[#0a1588] font-bold pt-20'>Past Members</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 pr-30">
-        {Object.values(pastmembers).map((person, index)=>(
-
-          <Link href={person.link} key={index}>
-          <div className="border border-gray-400 rounded-lg px-5 py-5 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500">
-            <div className="flex box-border items-center">
-                  <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex-shrink-0">
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover object-center cursor-pointer"
-                    />
-                  </div>
-                <div className="block ml-5">
-                  <h4 className="m-0 text-[#002a5c] font-semibold">{person.name}</h4>
-                  <p className="m-0 text-[#002a5c]">{person.position}</p>
-                </div>
-            </div>
-          </div>
-          </Link>
-
-        ))}
-
-      </div>
-    </div>
-
+          ) : (
+            <p className="pt-4 text-slate-600">This archive is being updated.</p>
+          )}
+        </section>
+      ))}
     </div>
   )
 }

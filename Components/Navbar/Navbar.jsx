@@ -1,78 +1,82 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react'
-import './Navbar.css';
-import Image from 'next/image';
+import { useEffect, useState } from 'react'
+import './Navbar.css'
+import Image from 'next/image'
 import Link from 'next/link'
 import logo from '../../Assets/core_logo.png'
-import header_bg_color from '../../Assets/header-bg-color.png'
-import { assets } from '@/Assets/assets';
+import { navigationItems } from '@/data/navigation';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const Navbar = () => {
-
-  const sideMenuRef = useRef();
-
-  const openMenu = ()=>{
-    sideMenuRef.current.style.transform = 'translateX(-16rem)'
-  }
-
-  const closeMenu = ()=>{
-    sideMenuRef.current.style.transform = 'translateX(16rem)'
-  }
-
   const [isScroll, setIsScroll] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(()=>{
-    window.addEventListener('scroll', ()=>{
-      if(scrollY > 30){
-        setIsScroll(true)
-      }
-      else{
-        setIsScroll(false)
-      }
-    })
+    const handleScroll = () => setIsScroll(window.scrollY > 30)
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
   },[])
 
   return (
     <>
-    <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]'>
-        <Image src={header_bg_color} alt="" className='w-full'/>
-    </div>
-
-    <nav className={`sticky top-0 z-20 transition-colors duration-300 ease-in-out ${isScroll ? "bg-white" : "bg-transparent"}`}>
-      <div className='relative border-b border-b-[#f1f2f3]'>
-          <div className='clear-both mx-auto p-4 max-w-full flex justify-between px-30 items-center'>
-            <Link href="/">
-              <div className='flex items-center gap-2 cursor-pointer'>
-                <Image src={logo} alt="Logo" width={50} height={50}/>
-                <h1 className='text-lg font-semibold text-[#002a5c]'>CORE Lab</h1>
-              </div>
+    <nav className={`sticky top-0 z-20 border-b border-slate-200 transition-colors duration-300 ease-in-out ${isScroll ? "bg-white/95 shadow-sm backdrop-blur" : "bg-white"}`}>
+      <div className='mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 lg:px-12'>
+            <Link href="/" className='flex items-center gap-2'>
+              <Image src={logo} alt="CORE Lab logo" width={48} height={48} priority/>
+              <span className='text-lg font-semibold text-[#002a5c]'>CORE Lab</span>
             </Link>
-              <ul className='hidden md:flex gap-[40px] text-m nav-links'>
-                <Link href="/"><li className='cursor-pointer'>Home</li></Link>
-                <Link href="/team"><li className='cursor-pointer'>Team</li></Link>
-                <Link href="/publications"><li className='cursor-pointer'>Publications</li></Link>
-                <Link href="/projects"><li className='cursor-pointer'>Projects</li></Link>
-                <Link href="#contactus"><li className='cursor-pointer'>Contact Us</li></Link>
-              </ul>
 
-              <button className='block md:hidden top-0 right-0' onClick={openMenu}>
-                  <Image src={assets.menu_black} alt="" className='w-6'/>
-              </button>
-          </div>
+            <ul className='hidden items-center gap-9 text-sm font-medium text-slate-700 md:flex nav-links'>
+              {navigationItems.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className='transition-colors hover:text-[#0a1588]'>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <button
+              type="button"
+              className='block rounded-md p-2 transition hover:bg-slate-100 md:hidden'
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open navigation menu"
+              aria-expanded={isMenuOpen}
+            >
+                <HiMenu className='h-6 w-6' aria-hidden="true"/>
+            </button>
       </div>
 
       {/* mobile menu */}
-      <ul ref={sideMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500'>
-          
-          <button className='absolute right-6 top-6' onClick={closeMenu}>
-              <Image src={assets.close_black} alt="" className='w-5 cursor-pointer'/>
+      {isMenuOpen && (
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-slate-950/20 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+          aria-label="Dismiss navigation menu"
+        />
+      )}
+
+      <ul className={`fixed bottom-0 top-0 z-50 flex h-screen w-64 flex-col gap-4 bg-white px-8 py-20 text-slate-800 shadow-xl transition-transform duration-300 md:hidden ${isMenuOpen ? 'right-0 translate-x-0' : 'right-0 translate-x-full'}`}>
+          <button
+            type="button"
+            className='absolute right-6 top-6 rounded-md p-2 transition hover:bg-slate-100'
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close navigation menu"
+          >
+              <HiX className='h-5 w-5' aria-hidden="true"/>
           </button>
-          <Link href="/"><li className='cursor-pointer'>Home</li></Link>
-          <Link href="/team"><li className='cursor-pointer'>Team</li></Link>
-          <Link href="/publications"><li className='cursor-pointer'>Publications</li></Link>
-          <Link href="/projects"><li className='cursor-pointer'>Projects</li></Link>
-          <Link href="#contactus"><li className='cursor-pointer'>Contact Us</li></Link>
+          {navigationItems.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className='block py-1 font-medium' onClick={() => setIsMenuOpen(false)}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
       </ul>
 
     </nav>

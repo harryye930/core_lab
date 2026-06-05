@@ -1,14 +1,16 @@
-import React from 'react'
-
-const SearchBar = ({ query, setQuery }) => {
+const SearchBar = ({ query, setQuery, placeholder = 'Search' }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-6 mt-5">
+      <label htmlFor="publication-search" className="sr-only">
+        Search publications
+      </label>
       <input
+        id="publication-search"
         type="text"
-        placeholder="Search by title, author, or year..."
+        placeholder={placeholder}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full p-2 border border-gray-300 rounded"
+        className="w-full rounded-md border border-slate-300 px-3 py-2 text-slate-800 shadow-sm transition placeholder:text-slate-400 focus:border-[#0a1588] focus:outline-none focus:ring-2 focus:ring-blue-100"
       />
     </div>
   )

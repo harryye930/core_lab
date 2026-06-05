@@ -1,12 +1,14 @@
-.nav-links li::after{
+.nav-links a::after{
     content: '';
-    width: 0%;
+    width: 0;
     height: 2px;
     background: #0a1588;
     display: block;
     margin: auto;
-    transition: 0.5s;
+    transition: width 160ms ease;
 }
-.nav-links li:hover::after{
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after{
     width: 100%;
 }

@@ -1,63 +1,70 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
-import { posters } from '@/Assets/assets'
+import { useEffect, useState } from 'react'
+import { posterItems, publicationsPage } from '@/data/publications'
 import Image from "next/image";
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
 import Link from 'next/link';
 
-const Posters = () => {
-    let length = Object.keys(posters).length;
+const posterSlides = posterItems
+const slideIntervalMs = 6000
 
-    let [current, setCurrent] = useState(0);
+const Posters = () => {
+    const length = posterSlides.length
+
+    const [current, setCurrent] = useState(0)
     
-    let previousSlide = ()=>{
-        if(current===0){
-            setCurrent(length-1)
-        }
-        else{
-            setCurrent(current-1);
-        }
+    const previousSlide = () => {
+        setCurrent(prev => (prev === 0 ? length - 1 : prev - 1))
     }
 
-    let nextSlide = ()=>{
-        if(current===length-1){
-            setCurrent(0)
-        }
-        else{
-            setCurrent(current+1);
-        }
+    const nextSlide = () => {
+        setCurrent(prev => (prev === length - 1 ? 0 : prev + 1))
     }
 
     useEffect(() => {
+        if (length <= 1) return
+
         const interval = setInterval(() => {
             setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
-        }, 5000);
+        }, slideIntervalMs);
 
-        return () => clearInterval(interval); // cleanup on unmount or when slides change
+        return () => clearInterval(interval)
     }, [length]);
 
+  if (length === 0) return null
+
   return (
-    <div id="posters" className='pt-10 pb-5 pr-30 scroll-mt-20'>
-        <h1 className="text-2xl font-semibold text-[#0b3a72] pb-2 border-b border-b-[#f1f2f3]">
-            Poster Showcase
-        </h1>
-        <div className="overflow-hidden relative pt-5 flex items-center">
-            <button onClick={previousSlide} className="text-5xl text-[#0b3a72] cursor-pointer px-4">
-                <BsFillArrowLeftCircleFill />
+    <section id="posters" className='w-full scroll-mt-24 px-5 pb-5 pt-10 sm:px-8 lg:px-12'>
+        <h2 className="border-b border-b-slate-200 pb-3 text-2xl font-semibold text-[#0b3a72]">
+            {publicationsPage.postersTitle}
+        </h2>
+        <div className="relative flex items-center overflow-hidden pt-5">
+            <button
+              type="button"
+              onClick={previousSlide}
+              className="cursor-pointer rounded-full p-2 text-4xl text-[#0b3a72] transition hover:bg-slate-100"
+              aria-label="Show previous poster"
+            >
+                <BsFillArrowLeftCircleFill aria-hidden="true" />
             </button>
 
             <div className="flex-1 overflow-hidden">
                 <div
-                className={`flex transition ease-out duration-500`}
+                className="flex transition duration-500 ease-out"
                 style={{ transform: `translateX(-${current * 100}%)` }}
                 >
-                {Object.values(posters).map((poster, index) => (
+                {posterSlides.map((poster, index) => (
                     <Link href={poster.link} key={index} className='flex-none w-full'>
-                        <div className="px-10 pt-5 pb-12 border border-gray-300 rounded-3xl duration-500 cursor-pointer">
-                        <Image src={poster.image} alt="poster" className="h-130 w-auto mb-3 mx-auto" />
-                        <p className="pt-3 text-[#0b3a72] border-t-2 border-t-[#0b3a72] hover:underline">
-                            <b>{poster.conference}</b> — {poster.title}
+                        <div className="cursor-pointer rounded-lg border border-slate-200 px-4 pb-12 pt-5 transition hover:border-[#7b94b6] hover:shadow-sm sm:px-10">
+                        <Image
+                          src={poster.image}
+                          alt={`${poster.conference} poster: ${poster.title}`}
+                          className="mx-auto mb-3 h-auto max-h-[32rem] w-auto"
+                          sizes="(max-width: 768px) 80vw, 520px"
+                        />
+                        <p className="border-t-2 border-t-[#0b3a72] pt-3 text-sm leading-6 text-[#0b3a72] hover:underline sm:text-base">
+                            <b>{poster.conference}</b> - {poster.title}
                         </p>
                         </div>
                     </Link>
@@ -65,19 +72,30 @@ const Posters = () => {
                 </div>
             </div>
 
-            <button onClick={nextSlide} className="text-5xl text-[#0b3a72] cursor-pointer px-4">
-                <BsFillArrowRightCircleFill />
+            <button
+              type="button"
+              onClick={nextSlide}
+              className="cursor-pointer rounded-full p-2 text-4xl text-[#0b3a72] transition hover:bg-slate-100"
+              aria-label="Show next poster"
+            >
+                <BsFillArrowRightCircleFill aria-hidden="true" />
             </button>
 
             <div className='absolute bottom-0 py-4 flex justify-center gap-7 w-full'>
-                {Object.values(posters).map((poster, index)=>{
+                {posterSlides.map((poster, index)=>{
                     return (
-                        <div key={index} className={`rounded-full w-3 h-3 cursor-pointer ${index===current? 'bg-gray-600' : 'bg-gray-300'}`} onClick={()=>{setCurrent(index)}}></div>
+                        <button
+                          type="button"
+                          key={poster.link}
+                          className={`h-3 w-3 cursor-pointer rounded-full ${index===current? 'bg-slate-700' : 'bg-slate-300'}`}
+                          onClick={()=>{setCurrent(index)}}
+                          aria-label={`Show poster ${index + 1}`}
+                        />
                     )
                 })}
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

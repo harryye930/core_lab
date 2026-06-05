@@ -11,3 +11,16 @@
   --grid-template-columns-auto: repeat(auto-fit, minmax(300px, 1fr));
   --grid-template-columns-people: repeat(auto-fit, minmax(350px, 1fr));
 }
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #dbeafe;
+}
+
+:focus-visible {
+  outline: 2px solid #0a1588;
+  outline-offset: 3px;
+}

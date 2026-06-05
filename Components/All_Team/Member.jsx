@@ -1,274 +1,171 @@
-import React from 'react'
-import papers from '../../Papers/papers.json'
-import posters from '../../Papers/Posters/poster_papers.json';
-import { professors, grads, undergrads, pastmembers } from '@/Assets/assets';
+import { members, membersBySlug } from '@/data/members'
+import { publicationsByYear, posterPublications } from '@/data/publications'
 import Image from 'next/image'
-import website_icon from '../../Assets/website_icon.png'
-import google_scholar_icon from '../../Assets/google_scholar_icon.png'
-import email_icon from '../../Assets/email_icon.png'
-import linkedin_icon from '../../Assets/linkedin_icon.png'
+import { FaEnvelope, FaGlobe, FaLinkedin } from 'react-icons/fa'
+import { FaGoogleScholar } from 'react-icons/fa6'
+import PublicationCitation from '@/Components/Publications/PublicationCitation'
 
-const Member = ({ member }) => {
-  const parts = (member || '').split('_')
-
-  const fullName = parts
+const titleCaseSlug = (slug = '') =>
+  slug
+    .split('_')
+    .filter(Boolean)
     .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
     .join(' ')
 
-  const person = professors[fullName] || grads[fullName] || undergrads[fullName] || pastmembers[fullName]
+const normalizeName = (name) => String(name || '').trim().toLowerCase()
 
-  if (!person) {
-    return <p>Member not found</p>
-  }
+const getAuthors = (publication) => {
+  if (!publication?.author) return []
+  return Array.isArray(publication.author) ? publication.author : [publication.author]
+}
 
-  // Filter papers by year
-  const filteredPapersByYear = {}
-  for (const year of Object.keys(papers)) {
-    const papersInYear = papers[year].filter(paper => {
-      const authors = Array.isArray(paper.author) ? paper.author : [paper.author]
-      return authors.some(a => a.toLowerCase() === fullName.toLowerCase())
-    })
-    if (papersInYear.length > 0) {
-      filteredPapersByYear[year] = papersInYear
-    }
-  }
-  const sortedPaperYears = Object.keys(filteredPapersByYear).sort((a, b) => {
-    const aNum = parseInt(a)
-    const bNum = parseInt(b)
-    if (isNaN(aNum)) return 1
-    if (isNaN(bNum)) return -1
-    return bNum - aNum
-  })
+const sortYearsDescending = (a, b) => {
+  const aNum = parseInt(a)
+  const bNum = parseInt(b)
 
-  // Filter posters by year
-  const filteredPostersByYear = {};
-  for (const poster of posters) {
-    const authors = Array.isArray(poster.author) ? poster.author : [poster.author];
-    if (authors.some(a => a.toLowerCase() === fullName.toLowerCase())) {
-      const year = poster.year || 'Unknown';
-      if (!filteredPostersByYear[year]) filteredPostersByYear[year] = [];
-      filteredPostersByYear[year].push(poster);
-    }
-  }
-  const sortedPosterYears = Object.keys(filteredPostersByYear).sort((a, b) => {
-    const aNum = parseInt(a);
-    const bNum = parseInt(b);
-    if (isNaN(aNum)) return 1;
-    if (isNaN(bNum)) return -1;
-    return bNum - aNum;
-  });
+  if (isNaN(aNum)) return 1
+  if (isNaN(bNum)) return -1
+
+  return bNum - aNum
+}
+
+const groupByYear = (items) =>
+  items.reduce((acc, item) => {
+    const year = item.year || 'Unknown'
+    if (!acc[year]) acc[year] = []
+    acc[year].push(item)
+    return acc
+  }, {})
+
+const allPapers = Object.entries(publicationsByYear).flatMap(([year, items]) =>
+  items.map(item => ({ ...item, year: item.year || year }))
+)
+
+const getPersonBySlug = (member) => {
+  const slugName = titleCaseSlug(member)
+
+  return membersBySlug[member]
+    || members.find(person => normalizeName(person.name) === normalizeName(slugName))
+}
+
+const ContactLink = ({ icon: Icon, label, href, children }) => {
+  if (!href) return null
 
   return (
-    <section className="px-30 py-10 mx-auto">
-      <h1 className="text-2xl font-semibold text-[#0b3a72] pb-2 border-b border-b-[#f1f2f3]">
+    <li className="flex items-center gap-2">
+      <Icon className="h-5 w-5 shrink-0 text-slate-500" aria-hidden="true" />
+      <a
+        href={href}
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        className="break-all text-blue-700 hover:underline"
+      >
+        {children || label}
+      </a>
+    </li>
+  )
+}
+
+const PublicationSection = ({ title, groupedItems, emptyText, highlightAuthors }) => {
+  const sortedYears = Object.keys(groupedItems).sort(sortYearsDescending)
+
+  return (
+    <>
+      <h2 className="mt-10 border-b border-b-slate-200 pb-3 text-xl font-semibold text-[#0b3a72]">
+        {title}
+      </h2>
+
+      {sortedYears.length === 0 && <p className="pt-5 text-slate-600">{emptyText}</p>}
+
+      {sortedYears.map(year => (
+        <div key={year} className="mt-6 scroll-mt-24">
+          <div className="border-y border-y-[#0a1588] py-2 text-[20px] font-semibold text-[#0a1588]">
+            {year}
+          </div>
+          <ul className="pt-5 text-slate-800">
+            {groupedItems[year].map((item, index) => (
+              <li key={item.doi || `${item.title}-${index}`} className="mb-2 py-3 leading-7">
+                <PublicationCitation publication={item} highlightAuthors={highlightAuthors} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </>
+  )
+}
+
+const Member = ({ member }) => {
+  const slugName = titleCaseSlug(member)
+  const person = getPersonBySlug(member)
+
+  if (!person) {
+    return (
+      <section className="mx-auto max-w-5xl px-5 py-10 sm:px-8 lg:px-12">
+        <h1 className="border-b border-b-slate-200 pb-3 text-2xl font-semibold text-[#0b3a72]">
+          Member not found
+        </h1>
+      </section>
+    )
+  }
+
+  const highlightAuthors = [...new Set([slugName, person.name, ...(person.aliases || [])].filter(Boolean))]
+  const normalizedAuthorNames = highlightAuthors.map(normalizeName)
+  const matchesMember = (publication) =>
+    getAuthors(publication).some(author => normalizedAuthorNames.includes(normalizeName(author)))
+
+  const filteredPapersByYear = groupByYear(allPapers.filter(matchesMember))
+  const filteredPostersByYear = groupByYear(posterPublications.filter(matchesMember))
+
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:px-12">
+      <h1 className="border-b border-b-slate-200 pb-3 text-2xl font-semibold text-[#0b3a72]">
         {person.name}
       </h1>
 
-      <div className="pt-3 flex">
-        <Image src={person.image} alt={person.name} className="w-[20%] pb-5" />
-        <div className="pl-5 text-[#0b3a72]">
-          <p className="pb-5">{person.bio}</p>
-          <div className="flex flex-col items-start space-y-1 pt-3 border-t border-t-[#f1f2f3]">
-            {person.website && (
-              <div className="flex space-x-1 items-center">
-                <Image src={website_icon} alt={person.name} className="w-6" />
-                <a
-                  href={person.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  {person.website}
-                </a>
-              </div>
-            )}
-            {person.email && (
-              <div className="flex space-x-1 items-center">
-                <Image src={email_icon} alt={person.email} className="w-6" />
-                <a href={`mailto:${person.email}`} className="text-blue-600 hover:underline">
-                  {person.email}
-                </a>
-              </div>
-            )}
-            {person.googlescholar && (
-              <div className="flex space-x-1 items-center">
-                <Image src={google_scholar_icon} alt="Google Scholar Profile" className="w-6" />
-                <a
-                  href={person.googlescholar}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  Google Scholar
-                </a>
-              </div>
-            )}
-            {person.linkedin && (
-              <div className="flex space-x-1 items-center">
-                <Image src={linkedin_icon} alt="LinkedIn Profile" className="w-6" />
-                <a
-                  href={person.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            )}
-          </div>
+      <div className="grid gap-6 pt-5 md:grid-cols-[220px_1fr] md:items-start">
+        <Image
+          src={person.image}
+          alt={person.name}
+          className="h-auto w-full rounded-lg border border-slate-200"
+          sizes="(max-width: 768px) 100vw, 220px"
+        />
+        <div className="text-slate-700">
+          {person.bio ? (
+            <p className="leading-7">{person.bio}</p>
+          ) : (
+            <p className="leading-7 text-slate-600">Profile details will be added soon.</p>
+          )}
+          <ul className="mt-5 flex flex-col items-start gap-2 border-t border-t-slate-200 pt-4 text-sm">
+            <ContactLink icon={FaGlobe} href={person.website} label="Website">
+              {person.website}
+            </ContactLink>
+            <ContactLink icon={FaEnvelope} href={person.email ? `mailto:${person.email}` : ''} label="Email">
+              {person.email}
+            </ContactLink>
+            <ContactLink icon={FaGoogleScholar} href={person.googlescholar} label="Google Scholar">
+              Google Scholar
+            </ContactLink>
+            <ContactLink icon={FaLinkedin} href={person.linkedin} label="LinkedIn">
+              LinkedIn
+            </ContactLink>
+          </ul>
         </div>
       </div>
 
-      <h1 id="papers" className="text-xl font-semibold text-[#0b3a72] pb-2 border-b border-b-[#f1f2f3] mt-10">
-        Papers
-      </h1>
+      <PublicationSection
+        title="Papers"
+        groupedItems={filteredPapersByYear}
+        emptyText="No papers found."
+        highlightAuthors={highlightAuthors}
+      />
 
-      {sortedPaperYears.length === 0 && <p className="pt-5">No papers found.</p>}
-
-      {sortedPaperYears.map(year => (
-        <div key={year} className="scroll-mt-25 mt-6">
-          <div className="text-[20px] text-[#0a1588] font-semibold border-y border-y-[#0a1588] py-2">
-            {year}
-          </div>
-          <ul className="pt-5">
-            {filteredPapersByYear[year].map((paper, index) => (
-              <li key={paper.doi || index} className="mb-2 py-3">
-                <span>
-                  {Array.isArray(paper.author)
-                    ? paper.author.map((a, i) => (
-                        <React.Fragment key={i}>
-                          {a.toLowerCase() === fullName.toLowerCase() ? (
-                            <strong>{a}</strong>
-                          ) : (
-                            a
-                          )}
-                          {i < paper.author.length - 1 && ', '}
-                        </React.Fragment>
-                      ))
-                    : paper.author.toLowerCase() === fullName.toLowerCase()
-                    ? (
-                      <strong>{paper.author}</strong>
-                    )
-                    : (
-                      paper.author
-                    )}
-                  .
-                </span>
-                <span className="ml-1">
-                  <a
-                    href={paper.url}
-                    className="text-blue-600 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    "{paper.title}"
-                  </a>
-                  <span className="italic"> {paper.booktitle || paper.journal || paper.series}.</span> ({paper.year}).
-                  {paper.url && (
-                    <span className="ml-1">
-                      [
-                      <a
-                        href={paper.url}
-                        className="text-blue-600 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        url
-                      </a>
-                      ]
-                    </span>
-                  )}
-                  {paper.doi && (
-                    <span className="ml-1">
-                      [
-                      <a
-                        href={`https://doi.org/${paper.doi}`}
-                        className="text-blue-600 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        doi
-                      </a>
-                      ]
-                    </span>
-                  )}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-
-      <h1 id="posters" className="text-xl font-semibold text-[#0b3a72] pb-2 border-b border-b-[#f1f2f3] mt-10">
-        Posters
-      </h1>
-
-      {sortedPosterYears.length === 0 && <p className="pt-5">No posters found.</p>}
-
-      {sortedPosterYears.map(year => (
-        <div key={year} className="scroll-mt-25 mt-6">
-          <div className="text-[20px] text-[#0a1588] font-semibold border-y border-y-[#0a1588] py-2">
-            {year}
-          </div>
-          <ul className="pt-5">
-            {filteredPostersByYear[year].map((poster, index) => (
-              <li key={poster.doi || index} className="mb-2 py-3">
-                <span>
-                  {Array.isArray(poster.author)
-                    ? poster.author.map((a, i) => (
-                        <React.Fragment key={i}>
-                          {a.toLowerCase() === fullName.toLowerCase() ? <strong>{a}</strong> : a}
-                          {i < poster.author.length - 1 && ', '}
-                        </React.Fragment>
-                      ))
-                    : poster.author}
-                  .
-                </span>
-                <span className="ml-1">
-                  <a
-                    href={poster.url}
-                    className="text-blue-600 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    "{poster.title}"
-                  </a>
-                  <span className="italic"> {poster.booktitle || poster.journal || poster.series}.</span> ({poster.year}).
-                  {poster.url && (
-                    <span className="ml-1">
-                      [
-                      <a
-                        href={poster.url}
-                        className="text-blue-600 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        url
-                      </a>
-                      ]
-                    </span>
-                  )}
-                  {poster.doi && (
-                    <span className="ml-1">
-                      [
-                      <a
-                        href={`https://doi.org/${poster.doi}`}
-                        className="text-blue-600 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        doi
-                      </a>
-                      ]
-                    </span>
-                  )}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <PublicationSection
+        title="Posters"
+        groupedItems={filteredPostersByYear}
+        emptyText="No posters found."
+        highlightAuthors={highlightAuthors}
+      />
     </section>
   )
 }

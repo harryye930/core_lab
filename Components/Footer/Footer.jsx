@@ -1,19 +1,22 @@
-import { assets } from '@/Assets/assets'
-import Image from 'next/image'
-import React from 'react'
-import email_icon from '../../Assets/email_icon.png'
+import { FaEnvelope } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div className='px-30 pt-10 mx-auto' id='contactus'>
-      <div className='text-center sm:flex items-center justify-between border-t border-gray-400 mt-12 py-6'>
-        <p>Want to contact us or learn more?</p>
-        <ul className='flex flex-col items-front gap-2 justify-center mt-4 sm:mt-0'>
-            <li className='flex gap-1'> <Image src={email_icon} alt="email" className="w-7"/> <a href="mailto:learningcs.utm@utoronto.ca" className="text-blue-600 hover:underline">learningcs.utm@utoronto.ca</a></li>
-            <li className='flex gap-1'> <Image src={email_icon} alt="email" className="w-7"/> <a href="mailto:michael.liut@utoronto.ca" className="text-blue-600 hover:underline">michael.liut@utoronto.ca</a></li>
+    <footer className='mx-auto max-w-6xl px-5 pt-10 sm:px-8 lg:px-12' id='contactus'>
+      <div className='mt-12 border-t border-slate-200 py-6 text-center sm:flex sm:items-center sm:justify-between sm:text-left'>
+        <p className='font-medium text-slate-700'>Contact the lab</p>
+        <ul className='mt-4 flex flex-col items-start gap-2 text-sm sm:mt-0'>
+            <li className='flex items-center gap-2'>
+              <FaEnvelope className="h-5 w-5 shrink-0 text-slate-500" aria-hidden="true"/>
+              <a href="mailto:learningcs.utm@utoronto.ca" className="break-all text-blue-700 hover:underline">learningcs.utm@utoronto.ca</a>
+            </li>
+            <li className='flex items-center gap-2'>
+              <FaEnvelope className="h-5 w-5 shrink-0 text-slate-500" aria-hidden="true"/>
+              <a href="mailto:michael.liut@utoronto.ca" className="break-all text-blue-700 hover:underline">michael.liut@utoronto.ca</a>
+            </li>
         </ul>
       </div>
-    </div>
+    </footer>
   )
 }
 

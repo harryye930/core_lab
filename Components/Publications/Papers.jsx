@@ -1,105 +1,87 @@
 "use client"
 
-import React, { useState } from 'react'
-import publicationsByYear from '../../Papers/papers.json'
+import { useMemo, useState } from 'react'
+import { publicationsByYear, publicationsPage } from '@/data/publications'
 import SearchBar from './SearchBar'
+import PublicationCitation from './PublicationCitation'
+
+const allPublications = Object.entries(publicationsByYear).flatMap(([year, pubs]) =>
+  pubs.map(pub => ({ ...pub, year }))
+)
+
+const getSearchText = (publication) => {
+  const authors = Array.isArray(publication.author)
+    ? publication.author.join(' ')
+    : publication.author || ''
+
+  return [
+    publication.title,
+    authors,
+    publication.year,
+    publication.booktitle,
+    publication.journal,
+    publication.series,
+  ].filter(Boolean).join(' ').toLowerCase()
+}
+
+const sortYearsDescending = (a, b) => {
+  const aNum = parseInt(a)
+  const bNum = parseInt(b)
+
+  if (isNaN(aNum)) return 1
+  if (isNaN(bNum)) return -1
+
+  return bNum - aNum
+}
 
 const Papers = () => {
   const [query, setQuery] = useState('')
 
-  // Flatten all publications into one list
-  const allPublications = Object.entries(publicationsByYear).flatMap(([year, pubs]) =>
-    pubs.map(pub => ({ ...pub, year }))
+  const filtered = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase()
+    if (!normalizedQuery) return allPublications
+
+    return allPublications.filter(pub => getSearchText(pub).includes(normalizedQuery))
+  }, [query])
+
+  const groupedFiltered = useMemo(() => (
+    filtered.reduce((acc, pub) => {
+      const year = pub.year || 'Unknown'
+      if (!acc[year]) acc[year] = []
+      acc[year].push(pub)
+      return acc
+    }, {})
+  ), [filtered])
+
+  const sortedYears = useMemo(
+    () => Object.keys(groupedFiltered).sort(sortYearsDescending),
+    [groupedFiltered]
   )
 
-  // Filter publications according to query
-  const filtered = allPublications.filter(pub => {
-    const searchString = `${pub.title} ${pub.author} ${pub.year} ${pub.booktitle || pub.journal || pub.series}`.toLowerCase()
-    return searchString.includes(query.toLowerCase())
-  })
-
-  // Re-group filtered results by year (preserve order)
-  const groupedFiltered = filtered.reduce((acc, pub) => {
-    const year = pub.year || 'Unknown'
-    if (!acc[year]) acc[year] = []
-    acc[year].push(pub)
-    return acc
-  }, {})
-
-  // Preserve the original descending order
-  const sortedYears = Object.keys(groupedFiltered)
-  .sort((a, b) => {
-    const aNum = parseInt(a)
-    const bNum = parseInt(b)
-
-    // Place non-numeric years like "Unknown" at the end
-    if (isNaN(aNum)) return 1
-    if (isNaN(bNum)) return -1
-
-    return bNum - aNum // Descending
-  })
-
   return (
-    <section id="papers" className="pr-30 pl-5 py-5 scroll-mt-20 w-300">
-      <h1 className="text-2xl font-semibold text-[#0b3a72] pb-2 border-b border-b-[#f1f2f3]">
-        All Papers
-      </h1>
+    <section id="papers" className="w-full scroll-mt-24 px-5 py-8 sm:px-8 lg:px-12">
+      <h2 className="border-b border-b-slate-200 pb-3 text-2xl font-semibold text-[#0b3a72]">
+        {publicationsPage.papersTitle}
+      </h2>
 
-      <SearchBar query={query} setQuery={setQuery} />
+      <SearchBar
+        query={query}
+        setQuery={setQuery}
+        placeholder={publicationsPage.searchPlaceholder}
+      />
 
       {filtered.length === 0 ? (
-        <ul className="pt-5">
-          <li>No matching papers found.</li>
-        </ul>
+        <p className="pt-5 text-slate-600">{publicationsPage.noPapersText}</p>
       ) : (
         sortedYears.map(year => (
-          <div key={year} className="scroll-mt-25">
-            <div className="text-[20px] text-[#0a1588] font-semibold border-y border-y-[#0a1588] py-2">
+          <div key={year} className="scroll-mt-24">
+            <div className="border-y border-y-[#0a1588] py-2 text-[20px] font-semibold text-[#0a1588]">
               {year}
             </div>
-            <ul className="pt-5">
+            <ul className="pt-5 text-slate-800">
               {groupedFiltered[year].map((pub, index) => (
-                <li key={pub.doi || index} className="mb-2 py-3">
-                  {Array.isArray(pub.author) ? pub.author.join(', ') : pub.author}.
-                  <span className="ml-1">
-                    <a
-                      href={pub.url}
-                      className="text-blue-600 hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      "{pub.title}"
-                    </a>
-                    <span className="italic"> {pub.booktitle || pub.journal || pub.series}.</span> ({pub.year}).
-                    {pub.url && (
-                      <span className="ml-1">
-                        [
-                        <a
-                          href={pub.url}
-                          className="text-blue-600 hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          url
-                        </a>
-                        ]
-                      </span>
-                    )}
-                    {pub.doi && (
-                      <span className="ml-1">
-                        [
-                        <a
-                          href={`https://doi.org/${pub.doi}`}
-                          className="text-blue-600 hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          doi
-                        </a>
-                        ]
-                      </span>
-                    )}
-                  </span>
+                <li key={pub.doi || `${pub.title}-${index}`} className="mb-2 py-3 leading-7">
+                  <PublicationCitation publication={pub} />
                 </li>
               ))}
             </ul>
