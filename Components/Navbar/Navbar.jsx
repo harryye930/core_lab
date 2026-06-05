@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react'
 import './Navbar.css'
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../Assets/core_logo.png'
-import { navigationItems } from '@/data/navigation';
+import { navigationItems, siteBrand } from '@/data/navigation';
 import { HiMenu, HiX } from 'react-icons/hi';
 
 const Navbar = () => {
@@ -26,8 +25,8 @@ const Navbar = () => {
     <nav className={`sticky top-0 z-20 border-b border-slate-200 transition-colors duration-300 ease-in-out ${isScroll ? "bg-white/95 shadow-sm backdrop-blur" : "bg-white"}`}>
       <div className='mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 lg:px-12'>
             <Link href="/" className='flex items-center gap-2'>
-              <Image src={logo} alt="CORE Lab logo" width={48} height={48} priority/>
-              <span className='text-lg font-semibold text-[#002a5c]'>CORE Lab</span>
+              <Image src={siteBrand.logo} alt={`${siteBrand.name} logo`} width={48} height={48} priority/>
+              <span className='text-lg font-semibold text-[#002a5c]'>{siteBrand.name}</span>
             </Link>
 
             <ul className='hidden items-center gap-9 text-sm font-medium text-slate-700 md:flex nav-links'>
