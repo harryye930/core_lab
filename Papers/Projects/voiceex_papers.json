@@ -1,18 +1,32 @@
 {
     "2025": [
         {
-            "series": "ITiCSE 2025",
-            "location": "Nijmegen, Netherlands",
-            "keywords": "flipped classroom, self-explanations, timing, voice explanations",
-            "numpages": "1",
-            "pages": "761",
-            "booktitle": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
-            "abstract": "Self-explanation promotes active learning by having students articulate their conceptual understanding in their own words. This study investigates whether the timing of self-explanations (before vs. after solving an exercise) relates to performance in a flipped, second-year computer organization course. Although students who self-explained before the exercises achieved higher course marks, the difference was not significant. Still, these findings suggest that early self-explanation may better prepare students for problem-solving when learning new concepts.",
-            "doi": "10.1145/3724389.3730767",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3724389.3730767",
-            "address": "New York, NY, USA",
-            "publisher": "Association for Computing Machinery",
-            "isbn": "9798400715693",
+            "paperId": "717ef03494d6752dbd97f23e2697e4207ac08127",
+            "year": "2025",
+            "title": "Enhancing Self-Explanation in Student Learning Through Large Language Models",
+            "author": [
+                "Jessica Wen",
+                "Angela Zavaleta Bernuy",
+                "Naaz Sibia",
+                "Andrew Petersen",
+                "Michael Liut"
+            ],
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3724389.3730790",
+            "doi": "10.1145/3724389.3730790",
+            "url": "https://doi.org/10.1145/3724389.3730790",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/717ef03494d6752dbd97f23e2697e4207ac08127",
+            "abstract": "Self-explanation deepens understanding by giving learners an opportunity to reflect on what they are learning in a structured way. However, many students struggle to engage in it effectively. We investigate whether large language models (LLMs) can scaffold self-explanations in a flipped computer organization course. In an A/B test, one group used a fixed prompt to compare their explanations with an expert's, while another engaged in an interactive dialogue with an LLM to identify gaps. Although the overall quality of the explanation did not differ significantly between conditions, some students (non-native English speakers and women) reported greater comfort and perceived value when using the LLM.",
+            "publicationDate": "2025-06-13",
+            "publicationTypes": [
+                "Book",
+                "JournalArticle",
+                "Conference"
+            ],
+            "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
+        },
+        {
+            "paperId": "4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
             "year": "2025",
             "title": "Self-Explanations: Does Timing Matter?",
             "author": [
@@ -25,46 +39,32 @@
                 "Andrew Petersen",
                 "Michael Liut"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3724389.3730767"
-        },
-        {
-            "series": "ITiCSE 2025",
-            "location": "Nijmegen, Netherlands",
-            "keywords": "computer organization, computing education, large language models, non-native english, self-explanations",
-            "numpages": "1",
-            "pages": "762",
-            "booktitle": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
-            "abstract": "Self-explanation deepens understanding by giving learners an opportunity to reflect on what they are learning in a structured way. However, many students struggle to engage in it effectively. We investigate whether large language models (LLMs) can scaffold self-explanations in a flipped computer organization course. In an A/B test, one group used a fixed prompt to compare their explanations with an expert's, while another engaged in an interactive dialogue with an LLM to identify gaps. Although the overall quality of the explanation did not differ significantly between conditions, some students (non-native English speakers and women) reported greater comfort and perceived value when using the LLM.",
-            "doi": "10.1145/3724389.3730790",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3724389.3730790",
-            "address": "New York, NY, USA",
-            "publisher": "Association for Computing Machinery",
-            "isbn": "9798400715693",
-            "year": "2025",
-            "title": "Enhancing Self-Explanation in Student Learning Through Large Language Models",
-            "author": [
-                "Jessica Wen",
-                "Angela Zavaleta Bernuy",
-                "Naaz Sibia",
-                "Andrew Petersen",
-                "Michael Liut"
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3724389.3730767",
+            "doi": "10.1145/3724389.3730767",
+            "url": "https://doi.org/10.1145/3724389.3730767",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
+            "abstract": "Self-explanation promotes active learning by having students articulate their conceptual understanding in their own words. This study investigates whether the timing of self-explanations (before vs. after solving an exercise) relates to performance in a flipped, second-year computer organization course. Although students who self-explained before the exercises achieved higher course marks, the difference was not significant. Still, these findings suggest that early self-explanation may better prepare students for problem-solving when learning new concepts.",
+            "publicationDate": "2025-06-13",
+            "publicationTypes": [
+                "JournalArticle",
+                "Book",
+                "Conference"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3724389.3730790"
+            "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
         }
     ],
     "2024": [
         {
             "series": "DIS '24",
-            "location": "Copenhagen, Denmark",
+            "location": "IT University of Copenhagen, Denmark",
             "keywords": "Active Learning, Explanation Prompts, Long-Term Memory, Self-Explanations, Student Performance, Text Explanations, Voice Explanations, Voice-based Interaction",
             "numpages": "16",
-            "pages": "86\u2013101",
+            "pages": "86–101",
             "booktitle": "Proceedings of the 2024 ACM Designing Interactive Systems Conference",
-            "abstract": "This research evaluates voice-based self-explanations as a pedagogical tool in preparation for lectures, assesses user preferences between voice and text, and derives design insights. We report two studies: Study 1, a quasi-experimental field study, with 247 participants divided into voice-based (N = 83), text-based (N = 81), and choice (N = 83) conditions. Study 2 uses semi-structured interviews (N = 16) to explore perceptions of the interaction paradigms in-depth. Results from the first study revealed a general preference for text, though voice users produced longer responses and more topic-related keywords. Over time, the preference for voice increased among students, from 10\\% to 46\\%, when given a choice. Study 2 suggested that factors like social presence contribute to hesitance toward voice-based explanations, with a cognitive load, self-confidence, and performance anxiety also influencing medium preferences. Our findings highlight design recommendations and demonstrate the potential of voice-based self-explanations in educational settings, indicating that mixed interfaces might better meet diverse needs.",
+            "abstract": "This research evaluates voice-based self-explanations as a pedagogical tool in preparation for lectures, assesses user preferences between voice and text, and derives design insights. We report two studies: Study 1, a quasi-experimental field study, with 247 participants divided into voice-based (N = 83), text-based (N = 81), and choice (N = 83) conditions. Study 2 uses semi-structured interviews (N = 16) to explore perceptions of the interaction paradigms in-depth. Results from the first study revealed a general preference for text, though voice users produced longer responses and more topic-related keywords. Over time, the preference for voice increased among students, from 10% to 46%, when given a choice. Study 2 suggested that factors like social presence contribute to hesitance toward voice-based explanations, with a cognitive load, self-confidence, and performance anxiety also influencing medium preferences. Our findings highlight design recommendations and demonstrate the potential of voice-based self-explanations in educational settings, indicating that mixed interfaces might better meet diverse needs.",
             "doi": "10.1145/3643834.3661596",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3643834.3661596",
+            "url": "https://doi.org/10.1145/3643834.3661596",
             "address": "New York, NY, USA",
             "publisher": "Association for Computing Machinery",
             "isbn": "9798400705830",
@@ -76,25 +76,34 @@
                 "Pan Chen",
                 "Jessica Jia-Ni Xu",
                 "Elexandra Tran",
-                "Runlong Ye",
+                "Harry Ye",
                 "Viktoria Pammer-Schindler",
                 "Andrew Petersen",
-                "Joseph Jay Williams",
+                "J. Williams",
                 "Michael Liut"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3643834.3661596"
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3643834.3661596",
+            "paperId": "566b9bf2118fb7d64dadd90bc051b1cb0b8fbd69",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/566b9bf2118fb7d64dadd90bc051b1cb0b8fbd69",
+            "publicationDate": "2024-07-01",
+            "publicationTypes": [
+                "JournalArticle",
+                "Book",
+                "Conference"
+            ],
+            "journal": "Proceedings of the 2024 ACM Designing Interactive Systems Conference"
         },
         {
             "series": "DataEd '24",
             "location": "Santiago, AA, Chile",
             "keywords": "Active Learning, Flipped Databases Course, Self-Explanations",
             "numpages": "7",
-            "pages": "20\u201326",
+            "pages": "20–26",
             "booktitle": "Proceedings of the 3rd International Workshop on Data Systems Education: Bridging Education Practice with Education Research",
-            "abstract": "Self-explanations show promise for engaging students with preparatory materials, yet research into the types of self-explanations submitted in computing is limited. This paper examines student perceptions of self-explanation prompts in a flipped databases course, building on existing research that highlights the advantages of self-explanations in such contexts. We present our findings on students\u2019 perceptions of the utility of self-explanation prompts and analyze the nature of the explanations generated across distinct topics. The results suggest that self-explanations not only facilitate a deeper understanding of the subject matter but also promote the discovery of new connections and examples through rewording explanations. Furthermore, errors within self-explanations offer valuable insights for the early identification of misconceptions.",
+            "abstract": "Self-explanations show promise for engaging students with preparatory materials, yet research into the types of self-explanations submitted in computing is limited. This paper examines student perceptions of self-explanation prompts in a flipped databases course, building on existing research that highlights the advantages of self-explanations in such contexts. We present our findings on students’ perceptions of the utility of self-explanation prompts and analyze the nature of the explanations generated across distinct topics. The results suggest that self-explanations not only facilitate a deeper understanding of the subject matter but also promote the discovery of new connections and examples through rewording explanations. Furthermore, errors within self-explanations offer valuable insights for the early identification of misconceptions.",
             "doi": "10.1145/3663649.3664374",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3663649.3664374",
+            "url": "https://doi.org/10.1145/3663649.3664374",
             "address": "New York, NY, USA",
             "publisher": "Association for Computing Machinery",
             "isbn": "9798400706783",
@@ -102,15 +111,23 @@
             "title": "Exploring Self-Explanations in a Flipped Database Course",
             "author": [
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Elexandra Tran",
                 "Jessica Jia-Ni Xu",
-                "Joseph Jay Williams",
+                "J. Williams",
                 "Andrew Petersen",
                 "Michael Liut"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3663649.3664374"
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3663649.3664374",
+            "paperId": "0d43194366684aa8a9fb679f75e84eba75d9bc8c",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/0d43194366684aa8a9fb679f75e84eba75d9bc8c",
+            "publicationDate": "2024-06-09",
+            "publicationTypes": [
+                "Book",
+                "JournalArticle"
+            ],
+            "journal": "Proceedings of the 3rd International Workshop on Data Systems Education: Bridging education practice with education research"
         }
     ],
     "2023": [
@@ -123,7 +140,7 @@
             "booktitle": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2",
             "abstract": "In this poster, we present a pilot study investigating the impact of the medium used for self-explanation on students' performance outcomes in a databases course. We did not see notable differences in student performance based on the medium they used for self-explanation. We also note that while most students prefer using text to submit self-explanations, their preferences may differ when they use voice.",
             "doi": "10.1145/3587103.3594188",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3587103.3594188",
+            "url": "https://doi.org/10.1145/3587103.3594188",
             "address": "New York, NY, USA",
             "publisher": "Association for Computing Machinery",
             "isbn": "9798400701399",
@@ -133,25 +150,34 @@
                 "Angela Zavaleta Bernuy",
                 "Jessica Jia-Ni Xu",
                 "Naaz Sibia",
-                "Joseph Jay Williams",
+                "J. Williams",
                 "Andrew Petersen",
                 "Michael Liut"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3587103.3594188"
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3587103.3594188",
+            "paperId": "ddf4dc210822713940b1b667328eb76f709c39aa",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/ddf4dc210822713940b1b667328eb76f709c39aa",
+            "publicationDate": "2023-06-29",
+            "publicationTypes": [
+                "JournalArticle",
+                "Book",
+                "Conference"
+            ],
+            "journal": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2"
         }
     ],
     "2022": [
         {
             "series": "DataEd '22",
             "location": "Philadelphia, PA, USA",
-            "keywords": "Active Learning, Computer Science Education, Databases, Long-Term Memory, Reflective Prompts, Student Performance",
+            "keywords": "Active Learning, Long-Term Memory, Computer Science Education, Reflective Prompts, Databases, Student Performance",
             "numpages": "6",
-            "pages": "32\u201337",
-            "booktitle": "Proceedings of the 1st International Workshop on Data Systems Education",
-            "abstract": "Motivation: Prior literature has identified student reflections as a way to encourage students to express their thoughts in a structured and focused manner. Objectives: Our goal is to examine the impact of reflections in a third year database systems course, which employs an active learning approach and classroom environment. Specifically, we are interested in seeing whether reflecting on key concepts covered in a preparatory component before lecture had an impact on student\u2019s immediate and long-term performance. Methods: Students were divided into two groups, and asked to reflect on different topics after watching lecture videos before completing their homework exercises for 3 weeks. Results: We observed that students who reflected on lecture concepts performed better on homework exercises that covered those same concepts than students who did not reflect on those same concepts. Moreover, students who reflected performed better in subsequent assessments than students who did not reflect at all. Implications: Reflection as a part of the preparatory component in flipped classrooms is a useful component in conceptual understanding. Further research and investigation should be pursued into ways of prompting reflection, and assessing this component in database courses.",
+            "pages": "32–37",
+            "booktitle": "1st International Workshop on Data Systems Education",
+            "abstract": "Motivation: Prior literature has identified student reflections as a way to encourage students to express their thoughts in a structured and focused manner. Objectives: Our goal is to examine the impact of reflections in a third year database systems course, which employs an active learning approach and classroom environment. Specifically, we are interested in seeing whether reflecting on key concepts covered in a preparatory component before lecture had an impact on student’s immediate and long-term performance. Methods: Students were divided into two groups, and asked to reflect on different topics after watching lecture videos before completing their homework exercises for 3 weeks. Results: We observed that students who reflected on lecture concepts performed better on homework exercises that covered those same concepts than students who did not reflect on those same concepts. Moreover, students who reflected performed better in subsequent assessments than students who did not reflect at all. Implications: Reflection as a part of the preparatory component in flipped classrooms is a useful component in conceptual understanding. Further research and investigation should be pursued into ways of prompting reflection, and assessing this component in database courses.",
             "doi": "10.1145/3531072.3535323",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3531072.3535323",
+            "url": "https://doi.org/10.1145/3531072.3535323",
             "address": "New York, NY, USA",
             "publisher": "Association for Computing Machinery",
             "isbn": "9781450393508",
@@ -161,19 +187,27 @@
                 "Naaz Sibia",
                 "Michael Liut"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3531072.3535323"
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3531072.3535323",
+            "paperId": "8b315573bf8818526a8075388f12fc27ff9c1928",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/8b315573bf8818526a8075388f12fc27ff9c1928",
+            "publicationDate": "2022-06-12",
+            "publicationTypes": [
+                "Book",
+                "JournalArticle"
+            ],
+            "journal": "Proceedings of the 1st International Workshop on Data Systems Education"
         },
         {
             "series": "SIGCSE 2022",
             "location": "Providence, RI, USA",
-            "keywords": "voice responses, surveys, open-ended questions, cs1",
+            "keywords": "surveys, open-ended questions, voice responses, cs1",
             "numpages": "1",
             "pages": "1124",
             "booktitle": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 2",
             "abstract": "With the widespread usage of mobile devices, users can now choose to provide input through voice or text. As researchers frequently ask students open-ended questions, we want to explore a natural mode to obtain better feedback in surveys. This study details a preliminary study demonstrating the importance of allowing students to choose between voice or text input to respond to surveys. A survey with several open-ended questions was deployed in a CS1 course. Correlations between the gender of the respondent and their method of responding were evaluated. We found that voice responses tended to be longer and preferred more by females relative to male students.",
             "doi": "10.1145/3478432.3499087",
-            "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3478432.3499087",
+            "url": "https://doi.org/10.1145/3478432.3499087",
             "address": "New York, NY, USA",
             "publisher": "Association for Computing Machinery",
             "isbn": "9781450390712",
@@ -182,12 +216,22 @@
             "author": [
                 "Pan Chen",
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Michael Liut",
-                "Joseph Jay Williams"
+                "J. Williams"
             ],
-            "ENTRYTYPE": "inproceedings",
-            "ID": "10.1145/3478432.3499087"
+            "ENTRYTYPE": "article",
+            "ID": "10.1145/3478432.3499087",
+            "paperId": "75c0d510884b6519000fb694e3e0e5e984c6b1a6",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/75c0d510884b6519000fb694e3e0e5e984c6b1a6",
+            "publicationDate": "2022-03-03",
+            "publicationTypes": [
+                "JournalArticle",
+                "Book",
+                "Conference",
+                "Review"
+            ],
+            "journal": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 2"
         }
     ]
 }

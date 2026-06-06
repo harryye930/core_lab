@@ -1,5 +1,5 @@
 import { members, membersBySlug } from '@/data/members'
-import { publicationsByYear, posterPublications } from '@/data/publications'
+import { hasKnownPublicationYear, publicationsByYear, posterPublications } from '@/data/publications'
 import Image from 'next/image'
 import { FaEnvelope, FaGlobe, FaLinkedin } from 'react-icons/fa'
 import { FaGoogleScholar } from 'react-icons/fa6'
@@ -39,7 +39,7 @@ const groupByYear = (items) =>
 
 const allPapers = Object.entries(publicationsByYear).flatMap(([year, items]) =>
   items.map(item => ({ ...item, year: item.year || year }))
-)
+).filter(hasKnownPublicationYear)
 
 const getPersonBySlug = (member) => {
   const slugName = titleCaseSlug(member)
@@ -68,6 +68,7 @@ const ContactLink = ({ icon: Icon, label, href, children }) => {
 
 const PublicationSection = ({ title, groupedItems, emptyText, highlightAuthors }) => {
   const sortedYears = Object.keys(groupedItems).sort(sortYearsDescending)
+  let publicationNumber = sortedYears.reduce((total, year) => total + groupedItems[year].length, 0)
 
   return (
     <>
@@ -83,11 +84,21 @@ const PublicationSection = ({ title, groupedItems, emptyText, highlightAuthors }
             {year}
           </div>
           <ul className="pt-5 text-slate-800">
-            {groupedItems[year].map((item, index) => (
-              <li key={item.doi || `${item.title}-${index}`} className="mb-2 py-3 leading-7">
-                <PublicationCitation publication={item} highlightAuthors={highlightAuthors} />
-              </li>
-            ))}
+            {groupedItems[year].map((item, index) => {
+              const number = publicationNumber--
+
+              return (
+                <li key={item.doi || `${item.title}-${index}`} className="mb-2 py-3 leading-7">
+                  <PublicationCitation
+                    publication={item}
+                    highlightAuthors={highlightAuthors}
+                    highlightCoreMembers={false}
+                    linkMemberAuthors={false}
+                    number={number}
+                  />
+                </li>
+              )
+            })}
           </ul>
         </div>
       ))}
@@ -156,14 +167,14 @@ const Member = ({ member }) => {
       <PublicationSection
         title="Papers"
         groupedItems={filteredPapersByYear}
-        emptyText="No papers found."
+        emptyText="Papers will appear here as the archive grows."
         highlightAuthors={highlightAuthors}
       />
 
       <PublicationSection
         title="Posters"
         groupedItems={filteredPostersByYear}
-        emptyText="No posters found."
+        emptyText="Posters will appear here as the archive grows."
         highlightAuthors={highlightAuthors}
       />
     </section>

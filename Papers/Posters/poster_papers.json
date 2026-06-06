@@ -1,17 +1,6 @@
 [
     {
-        "series": "ITiCSE 2025",
-        "location": "Nijmegen, Netherlands",
-        "keywords": "computer organization, computing education, large language models, non-native english, self-explanations",
-        "numpages": "1",
-        "pages": "762",
-        "booktitle": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
-        "abstract": "Self-explanation deepens understanding by giving learners an opportunity to reflect on what they are learning in a structured way. However, many students struggle to engage in it effectively. We investigate whether large language models (LLMs) can scaffold self-explanations in a flipped computer organization course. In an A/B test, one group used a fixed prompt to compare their explanations with an expert's, while another engaged in an interactive dialogue with an LLM to identify gaps. Although the overall quality of the explanation did not differ significantly between conditions, some students (non-native English speakers and women) reported greater comfort and perceived value when using the LLM.",
-        "doi": "10.1145/3724389.3730790",
-        "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3724389.3730790",
-        "address": "New York, NY, USA",
-        "publisher": "Association for Computing Machinery",
-        "isbn": "9798400715693",
+        "paperId": "717ef03494d6752dbd97f23e2697e4207ac08127",
         "year": "2025",
         "title": "Enhancing Self-Explanation in Student Learning Through Large Language Models",
         "author": [
@@ -21,22 +10,22 @@
             "Andrew Petersen",
             "Michael Liut"
         ],
-        "ENTRYTYPE": "inproceedings",
-        "ID": "10.1145/3724389.3730790"
+        "ENTRYTYPE": "article",
+        "ID": "10.1145/3724389.3730790",
+        "doi": "10.1145/3724389.3730790",
+        "url": "https://doi.org/10.1145/3724389.3730790",
+        "semanticScholarUrl": "https://www.semanticscholar.org/paper/717ef03494d6752dbd97f23e2697e4207ac08127",
+        "abstract": "Self-explanation deepens understanding by giving learners an opportunity to reflect on what they are learning in a structured way. However, many students struggle to engage in it effectively. We investigate whether large language models (LLMs) can scaffold self-explanations in a flipped computer organization course. In an A/B test, one group used a fixed prompt to compare their explanations with an expert's, while another engaged in an interactive dialogue with an LLM to identify gaps. Although the overall quality of the explanation did not differ significantly between conditions, some students (non-native English speakers and women) reported greater comfort and perceived value when using the LLM.",
+        "publicationDate": "2025-06-13",
+        "publicationTypes": [
+            "Book",
+            "JournalArticle",
+            "Conference"
+        ],
+        "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
     },
     {
-        "series": "ITiCSE 2025",
-        "location": "Nijmegen, Netherlands",
-        "keywords": "flipped classroom, self-explanations, timing, voice explanations",
-        "numpages": "1",
-        "pages": "761",
-        "booktitle": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
-        "abstract": "Self-explanation promotes active learning by having students articulate their conceptual understanding in their own words. This study investigates whether the timing of self-explanations (before vs. after solving an exercise) relates to performance in a flipped, second-year computer organization course. Although students who self-explained before the exercises achieved higher course marks, the difference was not significant. Still, these findings suggest that early self-explanation may better prepare students for problem-solving when learning new concepts.",
-        "doi": "10.1145/3724389.3730767",
-        "url": "https://doi-org.myaccess.library.utoronto.ca/10.1145/3724389.3730767",
-        "address": "New York, NY, USA",
-        "publisher": "Association for Computing Machinery",
-        "isbn": "9798400715693",
+        "paperId": "4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
         "year": "2025",
         "title": "Self-Explanations: Does Timing Matter?",
         "author": [
@@ -49,7 +38,18 @@
             "Andrew Petersen",
             "Michael Liut"
         ],
-        "ENTRYTYPE": "inproceedings",
-        "ID": "10.1145/3724389.3730767"
+        "ENTRYTYPE": "article",
+        "ID": "10.1145/3724389.3730767",
+        "doi": "10.1145/3724389.3730767",
+        "url": "https://doi.org/10.1145/3724389.3730767",
+        "semanticScholarUrl": "https://www.semanticscholar.org/paper/4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
+        "abstract": "Self-explanation promotes active learning by having students articulate their conceptual understanding in their own words. This study investigates whether the timing of self-explanations (before vs. after solving an exercise) relates to performance in a flipped, second-year computer organization course. Although students who self-explained before the exercises achieved higher course marks, the difference was not significant. Still, these findings suggest that early self-explanation may better prepare students for problem-solving when learning new concepts.",
+        "publicationDate": "2025-06-13",
+        "publicationTypes": [
+            "JournalArticle",
+            "Book",
+            "Conference"
+        ],
+        "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
     }
 ]

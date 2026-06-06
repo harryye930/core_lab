@@ -1,20 +1,27 @@
 {
     "2025": [
         {
-            "url": "https://arxiv.org/abs/2506.20062",
-            "primaryclass": "cs.HC",
-            "archiveprefix": "arXiv",
-            "eprint": "2506.20062",
+            "paperId": "2b3b5b2d4519f8eda97d0235b5331b8d3481300c",
             "year": "2025",
+            "title": "Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents",
             "author": [
-                "Runlong Ye",
+                "Harry Ye",
                 "Zeling Zhang",
                 "Boushra Almazroua",
                 "Michael Liut"
             ],
-            "title": "Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents",
-            "ENTRYTYPE": "misc",
-            "ID": "ye2025autocompletedesigningcopilotlenstransparent"
+            "ENTRYTYPE": "article",
+            "ID": "10.48550/arxiv.2506.20062",
+            "doi": "10.48550/arxiv.2506.20062",
+            "url": "https://doi.org/10.48550/arxiv.2506.20062",
+            "semanticScholarUrl": "https://www.semanticscholar.org/paper/2b3b5b2d4519f8eda97d0235b5331b8d3481300c",
+            "abstract": "AI-powered code assistants are widely used to generate code completions, significantly boosting developer productivity. However, these tools typically present suggestions without explaining their rationale, leaving their decision-making process inscrutable. This opacity hinders developers'ability to critically evaluate outputs, form accurate mental models, and calibrate trust in the system. To address this, we introduce CopilotLens, a novel interactive framework that reframes code completion from a simple suggestion into a transparent, explainable interaction. CopilotLens operates as an explanation layer that reconstructs the AI agent's\"thought process\"through a dynamic, two-level interface. The tool aims to surface both high-level code changes and the specific codebase context influences. This paper presents the design and rationale of CopilotLens, offering a concrete framework and articulating expectations on deepening comprehension and calibrated trust, which we plan to evaluate in subsequent work.",
+            "publicationDate": "2025-06-24",
+            "publicationTypes": [
+                "JournalArticle"
+            ],
+            "journal": "ArXiv",
+            "volume": "abs/2506.20062"
         }
     ]
 }

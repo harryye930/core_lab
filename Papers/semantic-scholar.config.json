@@ -1,0 +1,71 @@
+{
+    "sync": {
+        "mergeExistingPublications": true,
+        "requestDelayMs": 1000,
+        "pageLimit": 100
+    },
+    "memberData": "data/members/index.js",
+    "exclude": {
+        "paperIds": [],
+        "dois": [],
+        "titles": []
+    },
+    "outputs": {
+        "allPublications": "Papers/papers.json"
+    },
+    "posters": {
+        "output": "Papers/Posters/poster_papers.json",
+        "selectors": [
+            {
+                "doi": "10.1145/3724389.3730790"
+            },
+            {
+                "doi": "10.1145/3724389.3730767"
+            }
+        ]
+    },
+    "projects": {
+        "voiceex": {
+            "output": "Papers/Projects/voiceex_papers.json",
+            "selectors": [
+                {
+                    "doi": "10.1145/3531072.3535323"
+                },
+                {
+                    "doi": "10.1145/3478432.3499087"
+                },
+                {
+                    "doi": "10.1145/3587103.3594188"
+                },
+                {
+                    "doi": "10.1145/3643834.3661596"
+                },
+                {
+                    "doi": "10.1145/3663649.3664374"
+                },
+                {
+                    "doi": "10.1145/3724389.3730767"
+                },
+                {
+                    "doi": "10.1145/3724389.3730790"
+                }
+            ]
+        },
+        "copilotlens": {
+            "output": "Papers/Projects/copilotlens_papers.json",
+            "selectors": [
+                {
+                    "title": "Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents"
+                }
+            ]
+        },
+        "arc": {
+            "output": "Papers/Projects/arc_papers.json",
+            "selectors": [
+                {
+                    "doi": "10.31219/osf.io/8vsru"
+                }
+            ]
+        }
+    }
+}

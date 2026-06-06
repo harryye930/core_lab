@@ -7,8 +7,11 @@ export const publicationsPage = {
   postersTitle: 'Poster Showcase',
   papersTitle: 'Papers',
   searchPlaceholder: 'Search by title, author, venue, or year',
-  noPapersText: 'No matching papers found.',
+  noPapersText: 'No matching papers yet - try a broader search.',
 }
+
+export const hasKnownPublicationYear = publication =>
+  /^\d{4}$/.test(String(publication?.year || '').trim())
 
 export { publicationsByYear, posterPublications }
 

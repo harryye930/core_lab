@@ -21,3 +21,28 @@ git clone <repo-url>
 cd research-lab-website
 npm install
 npm run dev
+```
+
+## Updating Publications
+Publication metadata can be synced from Semantic Scholar:
+
+```bash
+npm run sync:publications
+```
+
+Before running the sync, add each person's `semanticScholarAuthorIds` beside their member record in `data/members/index.js`.
+Set `SEMANTIC_SCHOLAR_KEY` in your local environment if you have an API key; the script will still run without one, but Semantic Scholar may rate-limit unauthenticated requests.
+
+The sync keeps the website's existing JSON data contract:
+- `Papers/papers.json` powers the publications list, search, filtering, and team pages.
+- `Papers/Posters/poster_papers.json` powers poster detail citations.
+- `Papers/Projects/*_papers.json` powers project publication lists.
+
+Project and poster membership is intentionally configured by DOI, Semantic Scholar paper ID, or exact title in `Papers/semantic-scholar.config.json`. That keeps publication metadata automated while preserving curated website grouping.
+
+Useful checks:
+
+```bash
+npm run sync:publications -- --dry-run
+npm run sync:publications -- --from-file Papers/papers.json --dry-run
+```
