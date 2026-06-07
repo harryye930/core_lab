@@ -17,13 +17,13 @@
         "semanticScholarUrl": "https://www.semanticscholar.org/paper/717ef03494d6752dbd97f23e2697e4207ac08127",
         "abstract": "Self-explanation deepens understanding by giving learners an opportunity to reflect on what they are learning in a structured way. However, many students struggle to engage in it effectively. We investigate whether large language models (LLMs) can scaffold self-explanations in a flipped computer organization course. In an A/B test, one group used a fixed prompt to compare their explanations with an expert's, while another engaged in an interactive dialogue with an LLM to identify gaps. Although the overall quality of the explanation did not differ significantly between conditions, some students (non-native English speakers and women) reported greater comfort and perceived value when using the LLM.",
         "publicationDate": "2025-06-13",
+        "bibtex": "@Book{Wen2025EnhancingSI,\n author = {Jessica Wen and Angela Zavaleta Bernuy and Naaz Sibia and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Enhancing Self-Explanation in Student Learning Through Large Language Models},\n year = {2025}\n}",
         "publicationTypes": [
             "Book",
             "JournalArticle",
             "Conference"
         ],
-        "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
-        "bibtex": "@Book{Wen2025EnhancingSI,\n author = {Jessica Wen and Angela Zavaleta Bernuy and Naaz Sibia and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Enhancing Self-Explanation in Student Learning Through Large Language Models},\n year = {2025}\n}"
+        "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
     },
     {
         "paperId": "4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
@@ -46,12 +46,12 @@
         "semanticScholarUrl": "https://www.semanticscholar.org/paper/4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
         "abstract": "Self-explanation promotes active learning by having students articulate their conceptual understanding in their own words. This study investigates whether the timing of self-explanations (before vs. after solving an exercise) relates to performance in a flipped, second-year computer organization course. Although students who self-explained before the exercises achieved higher course marks, the difference was not significant. Still, these findings suggest that early self-explanation may better prepare students for problem-solving when learning new concepts.",
         "publicationDate": "2025-06-13",
+        "bibtex": "@Article{Wen2025SelfExplanationsDT,\n author = {Jessica Wen and Bianca Arteaga Alvarez and Jorge Moreno Velasco and Naaz Sibia and Angela Zavaleta Bernuy and Carlos Suarez Hernandez and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Self-Explanations: Does Timing Matter?},\n year = {2025}\n}",
         "publicationTypes": [
             "JournalArticle",
             "Book",
             "Conference"
         ],
-        "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
-        "bibtex": "@Article{Wen2025SelfExplanationsDT,\n author = {Jessica Wen and Bianca Arteaga Alvarez and Jorge Moreno Velasco and Naaz Sibia and Angela Zavaleta Bernuy and Carlos Suarez Hernandez and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Self-Explanations: Does Timing Matter?},\n year = {2025}\n}"
+        "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
     }
 ]

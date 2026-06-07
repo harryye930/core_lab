@@ -31,6 +31,7 @@ npm run sync:publications
 ```
 
 Before running the sync, add each person's `semanticScholarAuthorIds` beside their member record in `data/members/index.js`.
+The publication JSON is generated from Semantic Scholar author IDs plus explicitly included Semantic Scholar paper IDs in `Papers/semantic-scholar.config.json`; legacy local bibliography records are not preserved automatically.
 Set `SEMANTIC_SCHOLAR_KEY` in your local environment if you have an API key; the script will still run without one, but Semantic Scholar may rate-limit unauthenticated requests.
 
 The sync keeps the website's existing JSON data contract:

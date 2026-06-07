@@ -44,6 +44,14 @@ const normalizeDoi = value => {
     .toLowerCase()
 }
 
+const doiFromUrl = value => {
+  const match = cleanString(value).match(/^https?:\/\/(?:dx\.)?doi\.org\/(.+)$/i)
+  return match ? normalizeDoi(match[1]) : ''
+}
+
+const getPublicationDoi = publication =>
+  normalizeDoi(publication.doi || publication.externalIds?.DOI) || doiFromUrl(publication.url)
+
 const normalizeTitle = value =>
   cleanString(value)
     .toLowerCase()
@@ -152,7 +160,6 @@ const parseArgs = argv => {
     config: DEFAULT_CONFIG_PATH,
     dryRun: false,
     fromFile: '',
-    mergeExisting: undefined,
     help: false,
   }
 
@@ -167,10 +174,6 @@ const parseArgs = argv => {
     } else if (arg === '--from-file') {
       options.fromFile = argv[index + 1]
       index += 1
-    } else if (arg === '--replace') {
-      options.mergeExisting = false
-    } else if (arg === '--merge-existing') {
-      options.mergeExisting = true
     } else if (arg === '--help' || arg === '-h') {
       options.help = true
     } else {
@@ -188,8 +191,6 @@ Usage: npm run sync:publications -- [options]
 Options:
   --dry-run             Fetch and summarize without writing JSON files.
   --from-file <path>    Use an existing publication JSON file instead of the Semantic Scholar API.
-  --replace             Do not merge existing Papers/papers.json entries.
-  --merge-existing      Merge existing Papers/papers.json entries even if config disables it.
   --config <path>       Use a custom config file. Defaults to ${DEFAULT_CONFIG_PATH}.
 
 Environment:
@@ -239,7 +240,7 @@ const publicationKey = publication => {
 
 const publicationKeys = publication => {
   const keys = []
-  const doi = normalizeDoi(publication.doi || publication.externalIds?.DOI)
+  const doi = getPublicationDoi(publication)
   if (doi) keys.push(`doi:${doi}`)
 
   const paperId = cleanString(publication.paperId)
@@ -322,29 +323,14 @@ const normalizeSemanticScholarPaper = (paper, canonicalAuthors) => {
   return publication
 }
 
-const normalizeExistingPublication = publication => {
-  const normalized = { ...publication }
-
-  if (normalized.doi) normalized.doi = normalizeDoi(normalized.doi)
-  if (normalized.year) normalized.year = String(normalized.year)
-  if (typeof normalized.author === 'string') {
-    normalized.author = normalized.author
-      .split(/\s+and\s+/)
-      .map(cleanString)
-      .filter(Boolean)
-  }
-
-  return normalized
-}
-
 const flattenPublications = data => {
   if (Array.isArray(data)) {
-    return data.map(normalizeExistingPublication)
+    return data
   }
 
   return Object.entries(data || {}).flatMap(([year, publications]) =>
     (publications || []).map(publication =>
-      normalizeExistingPublication({
+      ({
         ...publication,
         year: publication.year || year,
       })
@@ -379,7 +365,13 @@ const mergePublicationLists = (...publicationLists) => {
         ? mergePublication(publicationMap.get(existingKey), publication)
         : publication
 
-      for (const key of new Set([...keys, ...publicationKeys(merged)])) {
+      const existingKeys = existingKey
+        ? Array.from(publicationMap.entries())
+          .filter(([, value]) => value === publicationMap.get(existingKey))
+          .map(([key]) => key)
+        : []
+
+      for (const key of new Set([...existingKeys, ...keys, ...publicationKeys(merged)])) {
         publicationMap.set(key, merged)
       }
     }
@@ -461,7 +453,7 @@ const selectorMatches = (publication, selector) => {
     return true
   }
 
-  if (selector.doi && normalizeDoi(publication.doi) === normalizeDoi(selector.doi)) {
+  if (selector.doi && getPublicationDoi(publication) === normalizeDoi(selector.doi)) {
     return true
   }
 
@@ -555,10 +547,36 @@ const fetchAuthorPapers = async ({ author, pageLimit, requestDelayMs, apiKey }) 
   return papers
 }
 
+const paperSelectorRef = selector => {
+  if (selector.paperId) return cleanString(selector.paperId)
+  if (selector.doi) return `DOI:${normalizeDoi(selector.doi)}`
+  return ''
+}
+
+const fetchIncludedPapers = async ({ selectors = [], apiKey, canonicalAuthors, requestDelayMs }) => {
+  const publications = []
+
+  for (const selector of selectors) {
+    const ref = paperSelectorRef(selector)
+    if (!ref) continue
+
+    const url = new URL(`${SEMANTIC_SCHOLAR_BASE_URL}/paper/${encodeURIComponent(ref)}`)
+    url.searchParams.set('fields', PAPER_FIELDS)
+
+    const paper = await fetchJsonWithRetry(url, apiKey)
+    publications.push(normalizeSemanticScholarPaper(paper, canonicalAuthors))
+
+    if (requestDelayMs > 0) await sleep(requestDelayMs)
+  }
+
+  return publications
+}
+
 const fetchSemanticScholarPublications = async ({ config, canonicalAuthors, authors }) => {
   const apiKey = process.env.SEMANTIC_SCHOLAR_KEY || ''
   const pageLimit = config.sync?.pageLimit || 100
   const requestDelayMs = config.sync?.requestDelayMs ?? 1000
+  const includedPaperSelectors = config.include?.papers || []
   const sourceAuthors = (authors || [])
     .filter(author => author.enabled !== false)
     .flatMap(author =>
@@ -579,6 +597,17 @@ const fetchSemanticScholarPublications = async ({ config, canonicalAuthors, auth
     const papers = await fetchAuthorPapers({ author, pageLimit, requestDelayMs, apiKey })
     stats.push({ name: author.name, count: papers.length })
     publications.push(...papers.map(paper => normalizeSemanticScholarPaper(paper, canonicalAuthors)))
+  }
+
+  if (includedPaperSelectors.length > 0) {
+    const includedPapers = await fetchIncludedPapers({
+      selectors: includedPaperSelectors,
+      apiKey,
+      canonicalAuthors,
+      requestDelayMs,
+    })
+    stats.push({ name: 'explicitly included papers', count: includedPapers.length })
+    publications.push(...includedPapers)
   }
 
   return { publications, stats }
@@ -616,10 +645,6 @@ const main = async () => {
   const configuredAuthors = [...memberAuthors, ...(config.authors || [])]
   const canonicalAuthors = buildCanonicalAuthorMaps(configuredAuthors)
   const allOutputPath = config.outputs?.allPublications || 'Papers/papers.json'
-  const mergeExisting = args.mergeExisting ?? config.sync?.mergeExistingPublications !== false
-  const existingAllPublications = mergeExisting
-    ? flattenPublications(await readJson(allOutputPath, {}))
-    : []
 
   let fetchedPublications = []
   let fetchStats = []
@@ -638,7 +663,7 @@ const main = async () => {
   }
 
   const allPublications = sortPublications(
-    mergePublicationLists(existingAllPublications, fetchedPublications)
+    mergePublicationLists(fetchedPublications)
       .filter(publication => !isExcluded(publication, config.exclude))
   )
 
