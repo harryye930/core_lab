@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useRef, useState } from 'react'
 import Link from 'next/link'
 import { members } from '@/data/members'
 
@@ -27,6 +29,56 @@ const getAuthors = (publication) => {
 
 const getVenue = (publication) =>
   publication?.booktitle || publication?.journal || publication?.series || ''
+
+const copyTextToClipboard = async (text) => {
+  if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text)
+      return
+    } catch {
+      // Fall back for browser contexts that expose Clipboard API but deny write permission.
+    }
+  }
+
+  const textarea = document.createElement('textarea')
+  textarea.value = text
+  textarea.setAttribute('readonly', '')
+  textarea.style.position = 'fixed'
+  textarea.style.opacity = '0'
+  document.body.appendChild(textarea)
+  textarea.select()
+  document.execCommand('copy')
+  document.body.removeChild(textarea)
+}
+
+const BibCopyButton = ({ bibtex, title }) => {
+  const [copied, setCopied] = useState(false)
+  const resetTimer = useRef(null)
+
+  const handleCopy = async () => {
+    try {
+      await copyTextToClipboard(bibtex)
+      setCopied(true)
+
+      if (resetTimer.current) clearTimeout(resetTimer.current)
+      resetTimer.current = setTimeout(() => setCopied(false), 1600)
+    } catch (error) {
+      console.error('Failed to copy BibTeX', error)
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      className="text-blue-700 hover:underline"
+      aria-label={`Copy BibTeX for ${title}`}
+      title={copied ? 'Copied BibTeX' : 'Copy BibTeX'}
+      onClick={handleCopy}
+    >
+      bib
+    </button>
+  )
+}
 
 const AuthorList = ({
   authors,
@@ -76,6 +128,7 @@ const PublicationCitation = ({
   const venue = getVenue(publication)
   const title = publication.title || 'Untitled publication'
   const doi = publication.doi ? String(publication.doi).trim() : ''
+  const bibtex = publication.bibtex ? String(publication.bibtex).trim() : ''
 
   return (
     <div className={number ? 'grid grid-cols-[3.25rem_1fr] gap-3' : ''}>
@@ -120,6 +173,11 @@ const PublicationCitation = ({
                 doi
               </a>
               ]
+            </span>
+          )}
+          {bibtex && (
+            <span className="ml-1">
+              [<BibCopyButton bibtex={bibtex} title={title} />]
             </span>
           )}
         </span>

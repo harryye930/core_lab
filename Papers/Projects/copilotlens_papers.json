@@ -5,7 +5,7 @@
             "year": "2025",
             "title": "Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents",
             "author": [
-                "Harry Ye",
+                "Harry (Runlong) Ye",
                 "Zeling Zhang",
                 "Boushra Almazroua",
                 "Michael Liut"
@@ -21,7 +21,8 @@
                 "JournalArticle"
             ],
             "journal": "ArXiv",
-            "volume": "abs/2506.20062"
+            "volume": "abs/2506.20062",
+            "bibtex": "@Article{Ye2025BeyondAD,\n author = {Harry Ye and Zeling Zhang and Boushra Almazroua and Michael Liut},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents},\n volume = {abs/2506.20062},\n year = {2025}\n}"
         }
     ]
 }

@@ -5,7 +5,7 @@
             "year": "2026",
             "title": "From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews",
             "author": [
-                "Runlong Ye",
+                "Harry (Runlong) Ye",
                 "Naaz Sibia",
                 "Angela Zavaleta Bernuy",
                 "Tingting Zhu",
@@ -26,7 +26,8 @@
                 "Conference",
                 "Review"
             ],
-            "journal": "Proceedings of the 31st International Conference on Intelligent User Interfaces"
+            "journal": "Proceedings of the 31st International Conference on Intelligent User Interfaces",
+            "bibtex": "@Book{Ye2026FromTT,\n author = {Harry Ye and Naaz Sibia and Angela Zavaleta Bernuy and Tingting Zhu and Carolina Nobre and Viktoria Pammer-Schindler and Michael Liut},\n booktitle = {International Conference on Intelligent User Interfaces},\n journal = {Proceedings of the 31st International Conference on Intelligent User Interfaces},\n title = {From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews},\n year = {2026}\n}"
         }
     ]
 }

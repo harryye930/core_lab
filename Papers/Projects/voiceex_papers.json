@@ -23,7 +23,8 @@
                 "JournalArticle",
                 "Conference"
             ],
-            "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
+            "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
+            "bibtex": "@Book{Wen2025EnhancingSI,\n author = {Jessica Wen and Angela Zavaleta Bernuy and Naaz Sibia and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Enhancing Self-Explanation in Student Learning Through Large Language Models},\n year = {2025}\n}"
         },
         {
             "paperId": "4c4e1284a316d98231ac2ce4e47c784fbf6e1268",
@@ -51,7 +52,8 @@
                 "Book",
                 "Conference"
             ],
-            "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2"
+            "journal": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2",
+            "bibtex": "@Article{Wen2025SelfExplanationsDT,\n author = {Jessica Wen and Bianca Arteaga Alvarez and Jorge Moreno Velasco and Naaz Sibia and Angela Zavaleta Bernuy and Carlos Suarez Hernandez and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Self-Explanations: Does Timing Matter?},\n year = {2025}\n}"
         }
     ],
     "2024": [
@@ -76,7 +78,7 @@
                 "Pan Chen",
                 "Jessica Jia-Ni Xu",
                 "Elexandra Tran",
-                "Harry Ye",
+                "Harry (Runlong) Ye",
                 "Viktoria Pammer-Schindler",
                 "Andrew Petersen",
                 "J. Williams",
@@ -92,7 +94,8 @@
                 "Book",
                 "Conference"
             ],
-            "journal": "Proceedings of the 2024 ACM Designing Interactive Systems Conference"
+            "journal": "Proceedings of the 2024 ACM Designing Interactive Systems Conference",
+            "bibtex": "@Article{Bernuy2024DoesTM,\n author = {Angela Zavaleta Bernuy and Naaz Sibia and Pan Chen and Jessica Jia-Ni Xu and Elexandra Tran and Harry Ye and Viktoria Pammer-Schindler and Andrew Petersen and J. Williams and Michael Liut},\n booktitle = {Conference on Designing Interactive Systems},\n journal = {Proceedings of the 2024 ACM Designing Interactive Systems Conference},\n title = {Does the Medium Matter? An Exploration of Voice-Interaction for Self-Explanations},\n year = {2024}\n}"
         },
         {
             "series": "DataEd '24",
@@ -111,7 +114,7 @@
             "title": "Exploring Self-Explanations in a Flipped Database Course",
             "author": [
                 "Naaz Sibia",
-                "Angela M. Zavaleta Bernuy",
+                "Angela Zavaleta Bernuy",
                 "Elexandra Tran",
                 "Jessica Jia-Ni Xu",
                 "J. Williams",
@@ -127,7 +130,8 @@
                 "Book",
                 "JournalArticle"
             ],
-            "journal": "Proceedings of the 3rd International Workshop on Data Systems Education: Bridging education practice with education research"
+            "journal": "Proceedings of the 3rd International Workshop on Data Systems Education: Bridging education practice with education research",
+            "bibtex": "@Book{Sibia2024ExploringSI,\n author = {Naaz Sibia and Angela M. Zavaleta Bernuy and Elexandra Tran and Jessica Jia-Ni Xu and J. Williams and Andrew Petersen and Michael Liut},\n booktitle = {DataEd@SIGMOD},\n journal = {Proceedings of the 3rd International Workshop on Data Systems Education: Bridging education practice with education research},\n title = {Exploring Self-Explanations in a Flipped Database Course},\n year = {2024}\n}"
         }
     ],
     "2023": [
@@ -164,7 +168,8 @@
                 "Book",
                 "Conference"
             ],
-            "journal": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2"
+            "journal": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2",
+            "bibtex": "@Article{Bernuy2023SelfExplanationME,\n author = {Angela Zavaleta Bernuy and Jessica Jia-Ni Xu and Naaz Sibia and J. Williams and Andrew Petersen and Michael Liut},\n booktitle = {Annual Conference on Innovation and Technology in Computer Science Education},\n journal = {Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2},\n title = {Self-Explanation Modality: Effects on Student Performance?},\n year = {2023}\n}"
         }
     ],
     "2022": [
@@ -196,7 +201,8 @@
                 "Book",
                 "JournalArticle"
             ],
-            "journal": "Proceedings of the 1st International Workshop on Data Systems Education"
+            "journal": "Proceedings of the 1st International Workshop on Data Systems Education",
+            "bibtex": "@Book{Sibia2022ThePE,\n author = {Naaz Sibia and Michael Liut},\n booktitle = {DataEd@SIGMOD},\n journal = {Proceedings of the 1st International Workshop on Data Systems Education},\n title = {The Positive Effects of using Reflective Prompts in a Database Course},\n year = {2022}\n}"
         },
         {
             "series": "SIGCSE 2022",
@@ -216,7 +222,7 @@
             "author": [
                 "Pan Chen",
                 "Naaz Sibia",
-                "Angela M. Zavaleta Bernuy",
+                "Angela Zavaleta Bernuy",
                 "Michael Liut",
                 "J. Williams"
             ],
@@ -231,7 +237,8 @@
                 "Conference",
                 "Review"
             ],
-            "journal": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 2"
+            "journal": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 2",
+            "bibtex": "@Article{Chen2022InvestigatingTI,\n author = {Pan Chen and Naaz Sibia and Angela M. Zavaleta Bernuy and Michael Liut and J. Williams},\n booktitle = {Technical Symposium on Computer Science Education},\n journal = {Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 2},\n title = {Investigating the Impact of Voice Response Options in Surveys},\n year = {2022}\n}"
         }
     ]
 }

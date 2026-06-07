@@ -21,6 +21,7 @@ const PAPER_FIELDS = [
   'journal',
   'url',
   'authors',
+  'citationStyles',
   'isOpenAccess',
   'openAccessPdf',
 ].join(',')
@@ -46,6 +47,8 @@ const normalizeDoi = value => {
 const normalizeTitle = value =>
   cleanString(value)
     .toLowerCase()
+    .replace(/&amp;/g, 'and')
+    .replace(/&/g, 'and')
     .replace(/[{}]/g, '')
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim()
@@ -230,16 +233,22 @@ const canonicalizeAuthorName = (author, canonicalAuthors) => {
 }
 
 const publicationKey = publication => {
+  const keys = publicationKeys(publication)
+  return keys[0] || ''
+}
+
+const publicationKeys = publication => {
+  const keys = []
   const doi = normalizeDoi(publication.doi || publication.externalIds?.DOI)
-  if (doi) return `doi:${doi}`
+  if (doi) keys.push(`doi:${doi}`)
 
   const paperId = cleanString(publication.paperId)
-  if (paperId) return `paper:${paperId}`
+  if (paperId) keys.push(`paper:${paperId}`)
 
   const title = normalizeTitle(publication.title)
-  if (title) return `title:${title}:${publication.year || ''}`
+  if (title) keys.push(`title:${title}:${publication.year || ''}`)
 
-  return ''
+  return keys
 }
 
 const yearFromPublicationDate = publicationDate => {
@@ -296,6 +305,7 @@ const normalizeSemanticScholarPaper = (paper, canonicalAuthors) => {
   if (paper.abstract) publication.abstract = cleanString(paper.abstract)
   if (paper.publicationDate) publication.publicationDate = cleanString(paper.publicationDate)
   if (paper.openAccessPdf?.url) publication.openAccessPdfUrl = cleanString(paper.openAccessPdf.url)
+  if (paper.citationStyles?.bibtex) publication.bibtex = String(paper.citationStyles.bibtex).trim()
   if (Array.isArray(paper.publicationTypes) && paper.publicationTypes.length > 0) {
     publication.publicationTypes = paper.publicationTypes.map(cleanString).filter(Boolean)
   }
@@ -361,19 +371,21 @@ const mergePublicationLists = (...publicationLists) => {
 
   for (const publicationList of publicationLists) {
     for (const publication of publicationList) {
-      const key = publicationKey(publication)
-      if (!key) continue
+      const keys = publicationKeys(publication)
+      if (keys.length === 0) continue
+      const existingKey = keys.find(key => publicationMap.has(key))
 
-      publicationMap.set(
-        key,
-        publicationMap.has(key)
-          ? mergePublication(publicationMap.get(key), publication)
-          : publication
-      )
+      const merged = existingKey
+        ? mergePublication(publicationMap.get(existingKey), publication)
+        : publication
+
+      for (const key of new Set([...keys, ...publicationKeys(merged)])) {
+        publicationMap.set(key, merged)
+      }
     }
   }
 
-  return Array.from(publicationMap.values())
+  return Array.from(new Set(publicationMap.values()))
 }
 
 const sortYearsDescending = (a, b) => {
