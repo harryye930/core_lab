@@ -46,7 +46,7 @@
             "title": "Beyond One-Size-Fits-All Exercises: Personalizing Computer Science Worksheets with Large Language Models",
             "author": [
                 "Franco Ortiz",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Michael Liut"
             ],
             "ENTRYTYPE": "misc",
@@ -56,7 +56,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/cbe1fb98a7144b9c61ec919b01ee97cdd1fd0417",
             "abstract": "Large Language Models (LLMs) have been widely applied to student-facing educational tools, this work explores their use in supporting instructors by presenting a practical adaptation of the Framework for Adaptive Content using Educational Technology (FACET) system to generate personalized instructional materials for an Introduction to Computer Programming (CS1) course. We conducted a mixed-methods study with 409 first-year computer science (CS) students, focusing on regular expressions (RegEx). Students were assessed on their knowledge and motivation, classified into one of four learner profiles, and assigned either LLM-personalized (treatment) or standard non-adaptive (control) exercises. Personalized materials varied in scaffolding, instructional explicitness, and tone based on learner profiles grounded in Bloom's Taxonomy and Self-Determination Theory. Quantitative analysis reveals that standard exercises resulted in task incompletion among low-knowledge learners, with approximately 25-30% incompletion, whereas personalized materials sustained near-universal completion (>99%) across all profiles. While high-performing students experienced ceiling effects, Low Knowledge/Low Motivation students achieved significantly higher correctness (+18.2%) with personalized support. Survey data indicate that students prioritize structural scaffolding (logical sequence, difficulty pacing) over motivational tone and perceive the adaptive tasks as equally challenging as standard exercises. These findings suggest that learner-profile-driven LLM personalization primarily serves as a retention scaffold, preventing task abandonment among at-risk students without diminishing the task's\"desirable difficulty\". The results demonstrate that instructor-facing LLM systems can effectively close engagement gaps in CS1 by tailoring instructional explicitness to student needs.",
             "publicationDate": "2026-04-30",
-            "bibtex": "@Inproceedings{Ortiz2026BeyondOE,\n author = {Franco Ortiz and Harry Ye and Michael Liut},\n title = {Beyond One-Size-Fits-All Exercises: Personalizing Computer Science Worksheets with Large Language Models},\n year = {2026}\n}",
+            "bibtex": "@Inproceedings{Ortiz2026BeyondOE,\n author = {Franco Ortiz and Runlong Ye and Michael Liut},\n title = {Beyond One-Size-Fits-All Exercises: Personalizing Computer Science Worksheets with Large Language Models},\n year = {2026}\n}",
             "publicationTypes": [
                 "Review"
             ]
@@ -237,7 +237,7 @@
             "title": "Transforming GenAI Policy to Prompting Instruction: An RCT of Scalable Prompting Interventions in a CS1 Course",
             "author": [
                 "Ruiwei Xiao",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Xinying Hou",
                 "Jessica Wen",
                 "H. Kumar",
@@ -251,7 +251,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/73e761ff39429e4c07024df513e7c1ee4ecd1299",
             "abstract": "Despite universal GenAI adoption, students cannot distinguish task performance from actual learning and lack skills to leverage AI for learning, leading to worse exam performance when AI use remains unreflective. Yet few interventions teaching students to prompt AI as a tutor rather than solution provider have been validated at scale through randomized controlled trials (RCTs). To bridge this gap, we conducted a semester-long RCT (N=979) with four ICAP framework-based instructional conditions varying in engagement intensity with a pre-test, immediate and delayed post-test and surveys. Mixed methods analysis results showed: (1) All conditions significantly improved prompting skills, with gains increasing progressively from Condition 1 to Condition 4, validating ICAP's cognitive engagement hierarchy; (2) for students with similar pre-test scores, higher learning gain in immediate post-test predict higher final exam score, though no direct between-group differences emerged; (3) Our interventions are suitable and scalable solutions for diverse educational contexts, resources and learners. Together, this study makes empirical and theoretical contributions: (1) theoretically, we provided one of the first large-scale RCTs examining how cognitive engagement shapes learning in prompting literacy and clarifying the relationship between learning-oriented prompting skills and broader academic performance; (2) empirically, we offered timely design guidance for transforming GenAI classroom policies into scalable, actionable prompting literacy instruction to advance learning in the era of Generative AI.",
             "publicationDate": "2026-02-17",
-            "bibtex": "@Article{Xiao2026TransformingGP,\n author = {Ruiwei Xiao and Harry Ye and Xinying Hou and Jessica Wen and H. Kumar and Michael Liut and John Stamper},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Transforming GenAI Policy to Prompting Instruction: An RCT of Scalable Prompting Interventions in a CS1 Course},\n volume = {abs/2602.16033},\n year = {2026}\n}",
+            "bibtex": "@Article{Xiao2026TransformingGP,\n author = {Ruiwei Xiao and Runlong Ye and Xinying Hou and Jessica Wen and H. Kumar and Michael Liut and John Stamper},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Transforming GenAI Policy to Prompting Instruction: An RCT of Scalable Prompting Interventions in a CS1 Course},\n volume = {abs/2602.16033},\n year = {2026}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Review"
@@ -264,7 +264,7 @@
             "year": "2026",
             "title": "Exploring Emerging Norms of AI Attribution and Disclosure in Programming Education",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Oliver Huang",
                 "Jessica He",
                 "Michael Liut"
@@ -275,14 +275,14 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/966dd097053ed736bdf8a908605ff310f39b14bc",
             "abstract": "Generative AI blurs the lines of authorship in computing education, creating uncertainty around how students should attribute AI assistance. To examine these emerging norms, we conducted a factorial vignette study with 94 computer science students across 102 unique scenarios, systematically manipulating assessment type, AI autonomy, student activity, prior knowledge, and human refinement effort. This paper details how these factors influence students'perceptions of ownership and disclosure preferences. Our findings indicate that attribution judgments are primarily driven by different levels of AI assistance and human refinement. We also found that students'perception of authorship significantly predicts their policy expectations. We conclude by proposing a shift from statement-style policies to process-oriented attribution, transforming disclosure into a pedagogical mechanism for fostering critical engagement with AI-generated content.",
             "publicationDate": "2026-02-03",
-            "bibtex": "@Inproceedings{Ye2026ExploringEN,\n author = {Harry Ye and Oliver Huang and Jessica He and Michael Liut},\n title = {Exploring Emerging Norms of AI Attribution and Disclosure in Programming Education},\n year = {2026}\n}"
+            "bibtex": "@Inproceedings{Ye2026ExploringEN,\n author = {Runlong Ye and Oliver Huang and Jessica He and Michael Liut},\n title = {Exploring Emerging Norms of AI Attribution and Disclosure in Programming Education},\n year = {2026}\n}"
         },
         {
             "paperId": "c6df2cae9e2d2e09525dd234347b5ce74b60322d",
             "year": "2026",
             "title": "From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Naaz Sibia",
                 "Angela Zavaleta Bernuy",
                 "Tingting Zhu",
@@ -297,7 +297,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/c6df2cae9e2d2e09525dd234347b5ce74b60322d",
             "abstract": "Systematic Literature Reviews (SLRs) are fundamental to scientific progress, yet the process is hindered by a fragmented tool ecosystem that imposes a high cognitive load. This friction suppresses the iterative, exploratory nature of scholarly work. To investigate these challenges, we conducted an exploratory design study with 20 experienced researchers. This study identified key friction points: 1) the high cognitive load of managing iterative query refinement across multiple databases, 2) the overwhelming scale and pace of publication of modern literature, and 3) the tension between automation and scholarly agency. Informed by these findings, we developed Arc, a design probe that operationalizes solutions for multi-database integration, transparent iterative search, and verifiable AI-assisted screening. A comparative user study with 8 researchers suggests that an integrated environment facilitates a transition in scholarly work, moving researchers from managing administrative overhead to engaging in strategic exploration. By utilizing external representations to scaffold strategic exploration and transparent AI reasoning, our system supports verifiable judgment, aiming to augment expert contributions from initial creation through long-term maintenance of knowledge synthesis.",
             "publicationDate": "2026-01-21",
-            "bibtex": "@Book{Ye2026FromTT,\n author = {Harry Ye and Naaz Sibia and Angela Zavaleta Bernuy and Tingting Zhu and Carolina Nobre and Viktoria Pammer-Schindler and Michael Liut},\n booktitle = {International Conference on Intelligent User Interfaces},\n journal = {Proceedings of the 31st International Conference on Intelligent User Interfaces},\n title = {From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews},\n year = {2026}\n}",
+            "bibtex": "@Book{Ye2026FromTT,\n author = {Runlong Ye and Naaz Sibia and Angela Zavaleta Bernuy and Tingting Zhu and Carolina Nobre and Viktoria Pammer-Schindler and Michael Liut},\n booktitle = {International Conference on Intelligent User Interfaces},\n journal = {Proceedings of the 31st International Conference on Intelligent User Interfaces},\n title = {From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews},\n year = {2026}\n}",
             "publicationTypes": [
                 "Book",
                 "JournalArticle",
@@ -311,7 +311,7 @@
             "year": "2026",
             "title": "Reflexis: Supporting Reflexivity and Rigor in Collaborative Qualitative Analysis though Design for Deliberation",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Oliver Huang",
                 "Patrick Lee",
                 "Michael Liut",
@@ -325,7 +325,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/3d78fd2e3f092f5d12ba65c4ff246d11b7fe60b2",
             "abstract": "Reflexive Thematic Analysis (RTA) is a critical method for generating deep interpretive insights. Yet its core tenets, including researcher reflexivity, tangible analytical evolution, and productive disagreement, are often poorly supported by software tools that prioritize speed and consensus over interpretive depth. To address this gap, we introduce Reflexis, a collaborative workspace that centers these practices. It supports reflexivity by integrating in-situ reflection prompts, makes code evolution transparent and tangible, and scaffolds collaborative interpretation by turning differences into productive, positionality-aware dialogue. Results from our paired-analyst study (N = 12) indicate that Reflexis encouraged participants toward more granular reflection and reframed disagreements as productive conversations. The evaluation also surfaced key design tensions, including a desire for higher-level, networked memos and more user control over the timing of proactive alerts. Reflexis contributes a design framework for tools that prioritize rigor and transparency to support deep, collaborative interpretation in an age of automation.",
             "publicationDate": "2026-01-21",
-            "bibtex": "@Book{Ye2026ReflexisSR,\n author = {Harry Ye and Oliver Huang and Patrick Lee and Michael Liut and Carolina Nobre and Ha-Kyung Kong},\n booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},\n journal = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},\n title = {Reflexis: Supporting Reflexivity and Rigor in Collaborative Qualitative Analysis though Design for Deliberation},\n year = {2026}\n}",
+            "bibtex": "@Book{Ye2026ReflexisSR,\n author = {Runlong Ye and Oliver Huang and Patrick Lee and Michael Liut and Carolina Nobre and Ha-Kyung Kong},\n booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},\n journal = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},\n title = {Reflexis: Supporting Reflexivity and Rigor in Collaborative Qualitative Analysis though Design for Deliberation},\n year = {2026}\n}",
             "publicationTypes": [
                 "Book",
                 "JournalArticle",
@@ -343,7 +343,7 @@
                 "Xingjian Liu",
                 "Pan Chen",
                 "Oliver Huang",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Michael Liut",
                 "Alán Aspuru-Guzik"
             ],
@@ -354,7 +354,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/92b636905356485a4cdbcd79068a9b179a23edb9",
             "abstract": "Long documents pose many challenges to current intelligent writing systems. These include maintaining consistency across sections, sustaining efficient planning and writing as documents become more complex, and effectively providing and integrating AI assistance to the user. Existing AI co-writing tools offer either inline suggestions or limited structured planning, but rarely support the entire writing process that begins with high-level ideas and ends with polished prose, in which many layers of planning and outlining are needed. Here, we introduce TreeWriter, a hierarchical writing system that represents documents as trees and integrates contextual AI support. TreeWriter allows authors to create, save, and refine document outlines at multiple levels, facilitating drafting, understanding, and iterative editing of long documents. A built-in AI agent can dynamically load relevant content, navigate the document hierarchy, and provide context-aware editing suggestions. A within-subject study (N=12) comparing TreeWriter with Google Docs + Gemini on long-document editing and creative writing tasks shows that TreeWriter improves idea exploration/development, AI helpfulness, and perceived authorial control. A two-month field deployment (N=8) further demonstrated that hierarchical organization supports collaborative writing. Our findings highlight the potential of hierarchical, tree-structured editors with integrated AI support and provide design guidelines for future AI-assisted writing tools that balance automation with user agency.",
             "publicationDate": "2026-01-19",
-            "bibtex": "@Article{Zhang2026TreeWriterAH,\n author = {Zijian Zhang and Fangshi Du and Xingjian Liu and Pan Chen and Oliver Huang and Harry Ye and Michael Liut and Alán Aspuru-Guzik},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {TreeWriter: AI-Assisted Hierarchical Planning and Writing for Long-Form Documents},\n volume = {abs/2601.12740},\n year = {2026}\n}",
+            "bibtex": "@Article{Zhang2026TreeWriterAH,\n author = {Zijian Zhang and Fangshi Du and Xingjian Liu and Pan Chen and Oliver Huang and Runlong Ye and Michael Liut and Alán Aspuru-Guzik},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {TreeWriter: AI-Assisted Hierarchical Planning and Writing for Long-Form Documents},\n volume = {abs/2601.12740},\n year = {2026}\n}",
             "publicationTypes": [
                 "JournalArticle"
             ],
@@ -643,7 +643,7 @@
             "author": [
                 "Xinying Hou",
                 "Ruiwei Xiao",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Michael Liut",
                 "John Stamper"
             ],
@@ -654,7 +654,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/7c29003c0c71ffea8bf18df3efdcef9575c90591",
             "abstract": "The broad adoption of Generative AI (GenAI) is impacting Computer Science education, and recent studies found its benefits and potential concerns when students use it for programming learning. However, most existing explorations focus on GenAI tools that primarily support text-to-text interaction. With recent developments, GenAI applications have begun supporting multiple modes of communication, known as multimodality. In this work, we explored how undergraduate programming novices choose and work with multimodal GenAI tools, and their criteria for choices. We selected a commercially available multimodal GenAI platform for interaction, as it supports multiple input and output modalities, including text, audio, image upload, and real-time screen-sharing. Through 16 think-aloud sessions that combined participant observation with follow-up semi-structured interviews, we investigated student modality choices for GenAI tools when completing programming problems and the underlying criteria for modality selections. With multimodal communication emerging as the future of AI in education, this work aims to spark continued exploration on understanding student interaction with multimodal GenAI in the context of CS education.",
             "publicationDate": "2025-10-06",
-            "bibtex": "@Book{Hou2025ExploringSC,\n author = {Xinying Hou and Ruiwei Xiao and Harry Ye and Michael Liut and John Stamper},\n booktitle = {Technical Symposium on Computer Science Education},\n journal = {Proceedings of the 57th ACM Technical Symposium on Computer Science Education V.1},\n title = {Exploring Student Choice and the Use of Multimodal Generative AI in Programming Learning},\n year = {2025}\n}",
+            "bibtex": "@Book{Hou2025ExploringSC,\n author = {Xinying Hou and Ruiwei Xiao and Runlong Ye and Michael Liut and John Stamper},\n booktitle = {Technical Symposium on Computer Science Education},\n journal = {Proceedings of the 57th ACM Technical Symposium on Computer Science Education V.1},\n title = {Exploring Student Choice and the Use of Multimodal Generative AI in Programming Learning},\n year = {2025}\n}",
             "publicationTypes": [
                 "Book",
                 "JournalArticle",
@@ -671,7 +671,7 @@
                 "Valeria Ramirez Osorio",
                 "Jessica Wen",
                 "Rutwa Engineer",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Andrew Petersen",
                 "Michael Liut",
                 "Carolina Nobre"
@@ -790,7 +790,7 @@
                 "Zijian Zhang",
                 "Pan Chen",
                 "Fangshi Du",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Oliver Huang",
                 "Michael Liut",
                 "Alán Aspuru-Guzik"
@@ -802,7 +802,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/2d8ada27cac5fe543679458fb62556816a08194a",
             "abstract": "Efficiently navigating and understanding academic papers is crucial for scientific progress. Traditional linear formats like PDF and HTML can cause cognitive overload and obscure a paper’s hierarchical structure, making it difficult to locate key information. While LLM-based chatbots offer summarization, they often lack nuanced understanding of specific sections, may produce unreliable information, and typically discard the document’s navigational structure. Drawing insights from a formative study on academic reading practices, we introduce Treereader, a novel language model-augmented paper reader. Treereader decomposes papers into an interactive tree structure where each section is initially represented by an LLM-generated concise summary, with underlying details accessible on demand. This design allows users to quickly grasp core ideas, selectively explore sections of interest, and verify summaries against the source text. A user study was conducted to evaluate Treereader’s impact on reading efficiency and comprehension. Treereader provides a more focused and efficient way to navigate and understand complex academic literature by bridging hierarchical summarization with interactive exploration.",
             "publicationDate": "2025-07-25",
-            "bibtex": "@Article{Zhang2025TreeReaderAH,\n author = {Zijian Zhang and Pan Chen and Fangshi Du and Harry Ye and Oliver Huang and Michael Liut and Alán Aspuru-Guzik},\n booktitle = {IEEE Symposium on Visual Languages / Human-Centric Computing Languages and Environments},\n journal = {2025 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)},\n pages = {286-292},\n title = {TreeReader: A Hierarchical Academic Paper Reader Powered by Language Models},\n year = {2025}\n}",
+            "bibtex": "@Article{Zhang2025TreeReaderAH,\n author = {Zijian Zhang and Pan Chen and Fangshi Du and Runlong Ye and Oliver Huang and Michael Liut and Alán Aspuru-Guzik},\n booktitle = {IEEE Symposium on Visual Languages / Human-Centric Computing Languages and Environments},\n journal = {2025 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)},\n pages = {286-292},\n title = {TreeReader: A Hierarchical Academic Paper Reader Powered by Language Models},\n year = {2025}\n}",
             "publicationTypes": [
                 "JournalArticle"
             ],
@@ -972,7 +972,7 @@
             "year": "2025",
             "title": "Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Zeling Zhang",
                 "Boushra Almazroua",
                 "Michael Liut"
@@ -984,7 +984,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/2b3b5b2d4519f8eda97d0235b5331b8d3481300c",
             "abstract": "AI-powered code assistants are widely used to generate code completions, significantly boosting developer productivity. However, these tools typically present suggestions without explaining their rationale, leaving their decision-making process inscrutable. This opacity hinders developers'ability to critically evaluate outputs, form accurate mental models, and calibrate trust in the system. To address this, we introduce CopilotLens, a novel interactive framework that reframes code completion from a simple suggestion into a transparent, explainable interaction. CopilotLens operates as an explanation layer that reconstructs the AI agent's\"thought process\"through a dynamic, two-level interface. The tool aims to surface both high-level code changes and the specific codebase context influences. This paper presents the design and rationale of CopilotLens, offering a concrete framework and articulating expectations on deepening comprehension and calibrated trust, which we plan to evaluate in subsequent work.",
             "publicationDate": "2025-06-24",
-            "bibtex": "@Article{Ye2025BeyondAD,\n author = {Harry Ye and Zeling Zhang and Boushra Almazroua and Michael Liut},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents},\n volume = {abs/2506.20062},\n year = {2025}\n}",
+            "bibtex": "@Article{Ye2025BeyondAD,\n author = {Runlong Ye and Zeling Zhang and Boushra Almazroua and Michael Liut},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents},\n volume = {abs/2506.20062},\n year = {2025}\n}",
             "publicationTypes": [
                 "JournalArticle"
             ],
@@ -998,7 +998,7 @@
             "author": [
                 "Ruiwei Xiao",
                 "Xinying Hou",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Majeed Kazemitabaar",
                 "Nicholas Diana",
                 "Michael Liut",
@@ -1011,7 +1011,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/0064c8fbcdbddffc892b207435544b70c08d862b",
             "abstract": "With the proliferation of large language model (LLM) applications since 2022, their use in education has sparked both excitement and concern. Recent studies consistently highlight students'(mis)use of LLMs can hinder learning outcomes. This work aims to teach students how to effectively prompt LLMs to improve their learning. We first proposed pedagogical prompting, a theoretically-grounded new concept to elicit learning-oriented responses from LLMs. To move from concept design to a proof-of-concept learning intervention in real educational settings, we selected early undergraduate CS education (CS1/CS2) as the example context. We began with a formative survey study with instructors (N=36) teaching early-stage undergraduate-level CS courses to inform the instructional design based on classroom needs. Based on their insights, we designed and developed a learning intervention through an interactive system with scenario-based instruction to train pedagogical prompting skills. Finally, we evaluated its instructional effectiveness through a user study with CS novice students (N=22) using pre/post-tests. Through mixed methods analyses, our results indicate significant improvements in learners'LLM-based pedagogical help-seeking skills, along with positive attitudes toward the system and increased willingness to use pedagogical prompts in the future. Our contributions include (1) a theoretical framework of pedagogical prompting; (2) empirical insights into current instructor attitudes toward pedagogical prompting; and (3) a learning intervention design with an interactive learning tool and scenario-based instruction leading to promising results on teaching LLM-based help-seeking. Our approach is scalable for broader implementation in classrooms and has the potential to be integrated into tools like ChatGPT as an on-boarding experience to encourage learning-oriented use of generative AI.",
             "publicationDate": "2025-06-23",
-            "bibtex": "@Article{Xiao2025ImprovingSI,\n author = {Ruiwei Xiao and Xinying Hou and Harry Ye and Majeed Kazemitabaar and Nicholas Diana and Michael Liut and John Stamper},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Improving Student-AI Interaction Through Pedagogical Prompting: An Example in Computer Science Education},\n volume = {abs/2506.19107},\n year = {2025}\n}",
+            "bibtex": "@Article{Xiao2025ImprovingSI,\n author = {Ruiwei Xiao and Xinying Hou and Runlong Ye and Majeed Kazemitabaar and Nicholas Diana and Michael Liut and John Stamper},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {Improving Student-AI Interaction Through Pedagogical Prompting: An Example in Computer Science Education},\n volume = {abs/2506.19107},\n year = {2025}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Review"
@@ -1451,7 +1451,7 @@
             "year": "2025",
             "title": "ScholarMate: A Mixed-Initiative Tool for Qualitative Knowledge Work and Information Sensemaking",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Patrick Lee",
                 "Matthew Varona",
                 "Oliver Huang",
@@ -1464,7 +1464,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/784e1e37bae757d63c737d6599e80a8bbfc47f5c",
             "abstract": "Synthesizing knowledge from large document collections is a critical yet increasingly complex aspect of qualitative research and knowledge work. While AI offers automation potential, effectively integrating it into human-centric sensemaking workflows remains challenging. We present ScholarMate, an interactive system designed to augment qualitative analysis by unifying AI assistance with human oversight. ScholarMate enables researchers to dynamically arrange and interact with text snippets on a non-linear canvas, leveraging AI for theme suggestions, multi-level summarization, and evidence-based theme naming, while ensuring transparency through traceability to source documents. Initial pilot studies indicated that users value this mixed-initiative approach, finding the balance between AI suggestions and direct manipulation crucial for maintaining interpretability and trust. We further demonstrate the system’s capability through a case study analyzing 24 papers. By balancing automation with human control, ScholarMate enhances efficiency and supports interpretability, offering a valuable approach for productive human-AI collaboration in demanding sensemaking tasks common in knowledge work.",
             "publicationDate": "2025-04-19",
-            "bibtex": "@Article{Ye2025ScholarMateAM,\n author = {Harry Ye and Patrick Lee and Matthew Varona and Oliver Huang and Carolina Nobre},\n booktitle = {Symposium on Human-Computer Interaction for Work},\n journal = {Adjunct Proceedings of the 4th Annual Symposium on Human-Computer Interaction for Work},\n title = {ScholarMate: A Mixed-Initiative Tool for Qualitative Knowledge Work and Information Sensemaking},\n year = {2025}\n}",
+            "bibtex": "@Article{Ye2025ScholarMateAM,\n author = {Runlong Ye and Patrick Lee and Matthew Varona and Oliver Huang and Carolina Nobre},\n booktitle = {Symposium on Human-Computer Interaction for Work},\n journal = {Adjunct Proceedings of the 4th Annual Symposium on Human-Computer Interaction for Work},\n title = {ScholarMate: A Mixed-Initiative Tool for Qualitative Knowledge Work and Information Sensemaking},\n year = {2025}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Book"
@@ -1623,7 +1623,7 @@
             "year": "2025",
             "title": "The Design Space of Recent AI-assisted Research Tools for Ideation, Sensemaking, and Scientific Creativity",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Matthew Varona",
                 "Oliver Huang",
                 "Patrick Lee",
@@ -1637,7 +1637,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/0bec0b66b0a2e01eb73cb0307628c295d7d617a6",
             "abstract": "Generative AI (GenAI) tools are radically expanding the scope and capability of automation in knowledge work such as academic research. While promising for augmenting cognition and streamlining processes, AI-assisted research tools may also increase automation bias and hinder critical thinking. To examine recent developments, we surveyed publications from leading HCI venues over the past three years, closely analyzing thirteen tools to better understand the novel capabilities of these AI-assisted systems and the design spaces they enable: seven employing traditional AI or customized transformer-based approaches, and six integrating open-access large language models (LLMs). Our analysis characterizes the emerging design space, distinguishes between tools focused on workflow mimicry versus generative exploration, and yields four critical design recommendations to guide the development of future systems that foster meaningful cognitive engagement: providing user agency and control, differentiating divergent/convergent thinking support, ensuring adaptability, and prioritizing transparency/accuracy. This work discusses how these insights signal a shift from mere workflow replication towards generative co-creation, presenting new opportunities for the community to craft intuitive, AI-driven research interfaces and interactions.",
             "publicationDate": "2025-02-22",
-            "bibtex": "@Article{Ye2025TheDS,\n author = {Harry Ye and Matthew Varona and Oliver Huang and Patrick Lee and Michael Liut and Carolina Nobre},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {The Design Space of Recent AI-assisted Research Tools for Ideation, Sensemaking, and Scientific Creativity},\n volume = {abs/2502.16291},\n year = {2025}\n}",
+            "bibtex": "@Article{Ye2025TheDS,\n author = {Runlong Ye and Matthew Varona and Oliver Huang and Patrick Lee and Michael Liut and Carolina Nobre},\n booktitle = {arXiv.org},\n journal = {ArXiv},\n title = {The Design Space of Recent AI-assisted Research Tools for Ideation, Sensemaking, and Scientific Creativity},\n volume = {abs/2502.16291},\n year = {2025}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Review"
@@ -2183,7 +2183,7 @@
             "title": "Exploring the Effects of Grouping by Programming Experience in Q&A Forums",
             "author": [
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Tiana V. Simovic",
                 "Chloe Huang",
                 "Yinyue Tan",
@@ -2451,7 +2451,7 @@
                 "Pan Chen",
                 "Jessica Jia-Ni Xu",
                 "Elexandra Tran",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Viktoria Pammer-Schindler",
                 "Andrew Petersen",
                 "J. Williams",
@@ -2464,7 +2464,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/566b9bf2118fb7d64dadd90bc051b1cb0b8fbd69",
             "abstract": "This research evaluates voice-based self-explanations as a pedagogical tool in preparation for lectures, assesses user preferences between voice and text, and derives design insights. We report two studies: Study 1, a quasi-experimental field study, with 247 participants divided into voice-based (N = 83), text-based (N = 81), and choice (N = 83) conditions. Study 2 uses semi-structured interviews (N = 16) to explore perceptions of the interaction paradigms in-depth. Results from the first study revealed a general preference for text, though voice users produced longer responses and more topic-related keywords. Over time, the preference for voice increased among students, from 10% to 46%, when given a choice. Study 2 suggested that factors like social presence contribute to hesitance toward voice-based explanations, with a cognitive load, self-confidence, and performance anxiety also influencing medium preferences. Our findings highlight design recommendations and demonstrate the potential of voice-based self-explanations in educational settings, indicating that mixed interfaces might better meet diverse needs.",
             "publicationDate": "2024-07-01",
-            "bibtex": "@Article{Bernuy2024DoesTM,\n author = {Angela Zavaleta Bernuy and Naaz Sibia and Pan Chen and Jessica Jia-Ni Xu and Elexandra Tran and Harry Ye and Viktoria Pammer-Schindler and Andrew Petersen and J. Williams and Michael Liut},\n booktitle = {Conference on Designing Interactive Systems},\n journal = {Proceedings of the 2024 ACM Designing Interactive Systems Conference},\n title = {Does the Medium Matter? An Exploration of Voice-Interaction for Self-Explanations},\n year = {2024}\n}",
+            "bibtex": "@Article{Bernuy2024DoesTM,\n author = {Angela Zavaleta Bernuy and Naaz Sibia and Pan Chen and Jessica Jia-Ni Xu and Elexandra Tran and Runlong Ye and Viktoria Pammer-Schindler and Andrew Petersen and J. Williams and Michael Liut},\n booktitle = {Conference on Designing Interactive Systems},\n journal = {Proceedings of the 2024 ACM Designing Interactive Systems Conference},\n title = {Does the Medium Matter? An Exploration of Voice-Interaction for Self-Explanations},\n year = {2024}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Book",
@@ -2478,7 +2478,7 @@
             "title": "Exploring Self-Explanations in a Flipped Database Course",
             "author": [
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Elexandra Tran",
                 "Jessica Jia-Ni Xu",
                 "J. Williams",
@@ -2777,7 +2777,7 @@
             "title": "Student Interaction with Instructor Emails in Introductory and Upper-Year Computing Courses",
             "author": [
                 "Angela Zavaleta Bernuy",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Naaz Sibia",
                 "Rohita Nalluri",
                 "J. Williams",
@@ -2793,7 +2793,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/e73d4fdcb9b2134adf10621608ccf0709e6136b8",
             "abstract": "In computing courses, instructor involvement and social comfort are vital for resilience and belonging. We examine engagement with instructor emails aimed at strengthening the connection with students. We sent weekly emails from instructors to first- and upper-year computing students. These emails included reminders for the assignments due each week. Half of the students received reminders embedded in an informal message that contained approachable wording and relevant current course events, while the rest received a list of precise deadlines. This text had no emotional engagement from the instructor. We collected and analyzed email access and link click rates, along with student survey responses about email preferences and engagement. We found that first-year students had lower email access and link click rates than upper-year students. While we did not find differences in first-year engagement based on the type of email, upper-year students appeared to be more engaged when receiving the intentionally informal version of the email. Understanding the message preferences of computing students can enhance instructor messaging and improve engagement. Strategies should be explored to boost first-year student engagement, while the higher engagement among upper-year students underscores the importance of instructor support in advanced courses.",
             "publicationDate": "2024-03-07",
-            "bibtex": "@Book{Bernuy2024StudentIW,\n author = {Angela Zavaleta Bernuy and Harry Ye and Naaz Sibia and Rohita Nalluri and J. Williams and Andrew Petersen and Erick Smith and Bogdan Simion and Michael Liut},\n booktitle = {Technical Symposium on Computer Science Education},\n journal = {Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1},\n title = {Student Interaction with Instructor Emails in Introductory and Upper-Year Computing Courses},\n year = {2024}\n}",
+            "bibtex": "@Book{Bernuy2024StudentIW,\n author = {Angela Zavaleta Bernuy and Runlong Ye and Naaz Sibia and Rohita Nalluri and J. Williams and Andrew Petersen and Erick Smith and Bogdan Simion and Michael Liut},\n booktitle = {Technical Symposium on Computer Science Education},\n journal = {Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1},\n title = {Student Interaction with Instructor Emails in Introductory and Upper-Year Computing Courses},\n year = {2024}\n}",
             "publicationTypes": [
                 "Book",
                 "JournalArticle",
@@ -2808,7 +2808,7 @@
             "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
             "author": [
                 "Majeed Kazemitabaar",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Xiaoning Wang",
                 "Austin Z. Henley",
                 "Paul Denny",
@@ -2823,7 +2823,7 @@
             "abstract": "Timely, personalized feedback is essential for students learning programming. LLM-powered tools like ChatGPT offer instant support, but reveal direct answers with code, which may hinder deep conceptual engagement. We developed CodeAid, an LLM-powered programming assistant delivering helpful, technically correct responses, without revealing code solutions. CodeAid answers conceptual questions, generates pseudo-code with line-by-line explanations, and annotates student’s incorrect code with fix suggestions. We deployed CodeAid in a programming class of 700 students for a 12-week semester. A thematic analysis of 8,000 usages of CodeAid was performed, further enriched by weekly surveys, and 22 student interviews. We then interviewed eight programming educators to gain further insights. Our findings reveal four design considerations for future educational AI assistants: D1) exploiting AI’s unique benefits; D2) simplifying query formulation while promoting cognitive engagement; D3) avoiding direct responses while encouraging motivated learning; and D4) maintaining transparency and control for students to asses and steer AI responses.",
             "publicationDate": "2024-01-20",
             "openAccessPdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642773",
-            "bibtex": "@Book{Kazemitabaar2024CodeAidEA,\n author = {Majeed Kazemitabaar and Harry Ye and Xiaoning Wang and Austin Z. Henley and Paul Denny and Michelle Craig and Tovi Grossman},\n booktitle = {International Conference on Human Factors in Computing Systems},\n journal = {Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems},\n title = {CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs},\n year = {2024}\n}",
+            "bibtex": "@Book{Kazemitabaar2024CodeAidEA,\n author = {Majeed Kazemitabaar and Runlong Ye and Xiaoning Wang and Austin Z. Henley and Paul Denny and Michelle Craig and Tovi Grossman},\n booktitle = {International Conference on Human Factors in Computing Systems},\n journal = {Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems},\n title = {CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs},\n year = {2024}\n}",
             "publicationTypes": [
                 "Book",
                 "JournalArticle",
@@ -3115,8 +3115,8 @@
             "year": "2023",
             "title": "Do Students Read Instructor Emails? A Case Study of Intervention Email Open Rates",
             "author": [
-                "Angela Zavaleta Bernuy",
-                "Harry (Runlong) Ye",
+                "Angela M. Zavaleta-Bernuy",
+                "Runlong Ye",
                 "Elexandra Tran",
                 "Naaz Sibia",
                 "Abhijoy Mandal",
@@ -3133,7 +3133,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/5c1f67bc64e432bac3cb1fededc6847135adc9f4",
             "abstract": "Email is an important mode of communication because it scales to the largest computing courses and is institutionally supported. Furthermore, regular email communication from instructors has been shown to help set student expectations and encourage participation. As a result, effective email can contribute to emotional engagement, which has been linked to improvements in performance and retention, the latter being a persistent problem in computer science. However, we lack a clear picture of how computing students interact with emails and whether their use aligns with instructors’ expectations. This paper addresses this gap by presenting data on how often CS1 students open instructor emails. We present email engagement data throughout the term for a particular type of email that prompts students to plan to start their homework. Contrary to instructors’ expectations, the rate at which students open emails of this kind does not change significantly over the term. Many students who engage with the emails do so consistently, even after repeated emails throughout the term. The patterns we found illustrate the value of collecting this type of data and informing instructors and researchers about who reads these messages and how often they actually reach students.",
             "publicationDate": "2023-11-13",
-            "bibtex": "@Book{Zavaleta-Bernuy2023DoSR,\n author = {Angela M. Zavaleta-Bernuy and Harry Ye and Elexandra Tran and Naaz Sibia and Abhijoy Mandal and Hammad Shaikh and Bogdan Simion and Michael Liut and Andrew Petersen and J. Williams},\n booktitle = {European Conference on Modelling and Simulation},\n journal = {Proceedings of the 23rd Koli Calling International Conference on Computing Education Research},\n title = {Do Students Read Instructor Emails? A Case Study of Intervention Email Open Rates},\n year = {2023}\n}",
+            "bibtex": "@Book{Zavaleta-Bernuy2023DoSR,\n author = {Angela M. Zavaleta-Bernuy and Runlong Ye and Elexandra Tran and Naaz Sibia and Abhijoy Mandal and Hammad Shaikh and Bogdan Simion and Michael Liut and Andrew Petersen and J. Williams},\n booktitle = {European Conference on Modelling and Simulation},\n journal = {Proceedings of the 23rd Koli Calling International Conference on Computing Education Research},\n title = {Do Students Read Instructor Emails? A Case Study of Intervention Email Open Rates},\n year = {2023}\n}",
             "publicationTypes": [
                 "Book",
                 "JournalArticle"
@@ -3870,7 +3870,7 @@
             "title": "Opportunities for Adaptive Experiments to Enable Continuous Improvement that Trades-off Instructor and Researcher Incentives",
             "author": [
                 "Ilya Musabirov",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Pan Chen",
                 "Michael Liut",
                 "J. Williams"
@@ -3925,12 +3925,12 @@
             "year": "2022",
             "title": "Behavioral Consequences of Reminder Emails on Students’ Academic Performance: a Real-world Deployment",
             "author": [
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Pan Chen",
                 "Yini Mao",
                 "Angela Wang-Lin",
                 "Hammad Shaikh",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "J. Williams"
             ],
             "ENTRYTYPE": "article",
@@ -3940,7 +3940,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/8bc3c7f1f78a453f463c4c5c0944c9dd7f07d921",
             "abstract": "Post-secondary institutions have experienced a continuous trend of student procrastination on course work, thus leading to lower academic performance and potentially worse knowledge retention and other longer-term impacts. Sending reminders about deliverables is a simple approach, but it has the potential to be a valuable tool to mitigate such issues and assist students with time management. This paper will introduce specific processes of conducting such experiments, especially email designs and randomization, to help instructors and researchers conduct similar experiments or field-deploying reminders. To evaluate homework reminder messages, we designed and deployed a real-world randomized A/B experiment at a North American university in a CS1 course where students were randomly assigned to either receive these reminder messages or not. Our findings suggest that students who received the reminder messages have a higher homework completion rate (p < .05) and performed significantly better (p < .01) on the following midterm test than students who did not receive the reminder message. Finally, we discuss how a homework reminder can improve student behaviours, as well as how this type of reminder can be enhanced for future interventions.",
             "publicationDate": "2022-09-21",
-            "bibtex": "@Article{Ye2022BehavioralCO,\n author = {Harry Ye and Pan Chen and Yini Mao and Angela Wang-Lin and Hammad Shaikh and Angela M. Zavaleta Bernuy and J. Williams},\n booktitle = {Conference on Information Technology Education},\n journal = {Proceedings of the 23rd Annual Conference on Information Technology Education},\n title = {Behavioral Consequences of Reminder Emails on Students’ Academic Performance: a Real-world Deployment},\n year = {2022}\n}",
+            "bibtex": "@Article{Ye2022BehavioralCO,\n author = {Runlong Ye and Pan Chen and Yini Mao and Angela Wang-Lin and Hammad Shaikh and Angela M. Zavaleta Bernuy and J. Williams},\n booktitle = {Conference on Information Technology Education},\n journal = {Proceedings of the 23rd Annual Conference on Information Technology Education},\n title = {Behavioral Consequences of Reminder Emails on Students’ Academic Performance: a Real-world Deployment},\n year = {2022}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Book"
@@ -3953,7 +3953,7 @@
             "title": "Increasing Students' Engagement to Reminder Emails Through Multi-Armed Bandits",
             "author": [
                 "Fernando J. Yanez",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Ziwen Han",
                 "Michael Liut",
                 "Anna N. Rafferty",
@@ -3979,7 +3979,7 @@
             "year": "2022",
             "title": "Using Adaptive Experiments to Rapidly Help Students",
             "author": [
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Q. Zheng",
                 "Hammad Shaikh",
                 "Jacob Nogas",
@@ -4087,7 +4087,7 @@
             "year": "2022",
             "title": "How can Email Interventions Increase Students’ Completion of Online Homework? A Case Study Using A/B Comparisons",
             "author": [
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Ziwen Han",
                 "Hammad Shaikh",
                 "Qiming Zheng",
@@ -4119,7 +4119,7 @@
             "author": [
                 "Pan Chen",
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Michael Liut",
                 "J. Williams"
             ],
@@ -4330,7 +4330,7 @@
             "year": "2022",
             "title": "Additional Evidence for the Prevalence of the Impostor Phenomenon in Computing",
             "author": [
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Anna Ly",
                 "Brian Harrington",
                 "Michael Liut",
@@ -4741,7 +4741,7 @@
             "year": "2021",
             "title": "Investigating the Impact of Online Homework Reminders Using Randomized A/B Comparisons",
             "author": [
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Q. Zheng",
                 "Hammad Shaikh",
                 "Andrew Petersen",

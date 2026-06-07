@@ -67,7 +67,7 @@
                 "Pan Chen",
                 "Jessica Jia-Ni Xu",
                 "Elexandra Tran",
-                "Harry (Runlong) Ye",
+                "Runlong Ye",
                 "Viktoria Pammer-Schindler",
                 "Andrew Petersen",
                 "J. Williams",
@@ -80,7 +80,7 @@
             "semanticScholarUrl": "https://www.semanticscholar.org/paper/566b9bf2118fb7d64dadd90bc051b1cb0b8fbd69",
             "abstract": "This research evaluates voice-based self-explanations as a pedagogical tool in preparation for lectures, assesses user preferences between voice and text, and derives design insights. We report two studies: Study 1, a quasi-experimental field study, with 247 participants divided into voice-based (N = 83), text-based (N = 81), and choice (N = 83) conditions. Study 2 uses semi-structured interviews (N = 16) to explore perceptions of the interaction paradigms in-depth. Results from the first study revealed a general preference for text, though voice users produced longer responses and more topic-related keywords. Over time, the preference for voice increased among students, from 10% to 46%, when given a choice. Study 2 suggested that factors like social presence contribute to hesitance toward voice-based explanations, with a cognitive load, self-confidence, and performance anxiety also influencing medium preferences. Our findings highlight design recommendations and demonstrate the potential of voice-based self-explanations in educational settings, indicating that mixed interfaces might better meet diverse needs.",
             "publicationDate": "2024-07-01",
-            "bibtex": "@Article{Bernuy2024DoesTM,\n author = {Angela Zavaleta Bernuy and Naaz Sibia and Pan Chen and Jessica Jia-Ni Xu and Elexandra Tran and Harry Ye and Viktoria Pammer-Schindler and Andrew Petersen and J. Williams and Michael Liut},\n booktitle = {Conference on Designing Interactive Systems},\n journal = {Proceedings of the 2024 ACM Designing Interactive Systems Conference},\n title = {Does the Medium Matter? An Exploration of Voice-Interaction for Self-Explanations},\n year = {2024}\n}",
+            "bibtex": "@Article{Bernuy2024DoesTM,\n author = {Angela Zavaleta Bernuy and Naaz Sibia and Pan Chen and Jessica Jia-Ni Xu and Elexandra Tran and Runlong Ye and Viktoria Pammer-Schindler and Andrew Petersen and J. Williams and Michael Liut},\n booktitle = {Conference on Designing Interactive Systems},\n journal = {Proceedings of the 2024 ACM Designing Interactive Systems Conference},\n title = {Does the Medium Matter? An Exploration of Voice-Interaction for Self-Explanations},\n year = {2024}\n}",
             "publicationTypes": [
                 "JournalArticle",
                 "Book",
@@ -94,7 +94,7 @@
             "title": "Exploring Self-Explanations in a Flipped Database Course",
             "author": [
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Elexandra Tran",
                 "Jessica Jia-Ni Xu",
                 "J. Williams",
@@ -175,7 +175,7 @@
             "author": [
                 "Pan Chen",
                 "Naaz Sibia",
-                "Angela Zavaleta Bernuy",
+                "Angela M. Zavaleta Bernuy",
                 "Michael Liut",
                 "J. Williams"
             ],

@@ -1,5 +1,0 @@
-export * from './home/index'
-export * from './members/index'
-export * from './navigation/index'
-export * from './projects/index'
-export * from './publications/index'

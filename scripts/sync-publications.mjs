@@ -198,41 +198,6 @@ Environment:
 `)
 }
 
-const buildCanonicalAuthorMaps = authors => {
-  const byId = new Map()
-  const byName = new Map()
-
-  for (const author of authors) {
-    const semanticScholarAuthorIds = getAuthorIds(author)
-    const canonical = {
-      name: cleanString(author.name),
-      aliases: (author.aliases || []).map(cleanString).filter(Boolean),
-      semanticScholarAuthorIds,
-    }
-
-    for (const authorId of semanticScholarAuthorIds) {
-      byId.set(authorId, canonical)
-    }
-
-    for (const name of [canonical.name, ...canonical.aliases].filter(Boolean)) {
-      byName.set(normalizeTitle(name), canonical)
-    }
-  }
-
-  return { byId, byName }
-}
-
-const canonicalizeAuthorName = (author, canonicalAuthors) => {
-  const authorId = normalizeAuthorId(author?.authorId)
-  if (authorId && canonicalAuthors.byId.has(authorId)) {
-    return canonicalAuthors.byId.get(authorId).name
-  }
-
-  const authorName = cleanString(author?.name)
-  const byNameMatch = canonicalAuthors.byName.get(normalizeTitle(authorName))
-  return byNameMatch?.name || authorName
-}
-
 const publicationKey = publication => {
   const keys = publicationKeys(publication)
   return keys[0] || ''
@@ -275,7 +240,7 @@ const deriveEntryType = paper => {
   return paper.venue ? 'inproceedings' : 'misc'
 }
 
-const normalizeSemanticScholarPaper = (paper, canonicalAuthors) => {
+const normalizeSemanticScholarPaper = paper => {
   const doi = normalizeDoi(paper.externalIds?.DOI)
   const year = paper.year || yearFromPublicationDate(paper.publicationDate) || 'Unknown'
   const title = cleanString(paper.title)
@@ -283,7 +248,7 @@ const normalizeSemanticScholarPaper = (paper, canonicalAuthors) => {
   const journalName = cleanString(paper.journal?.name)
   const venueName = cleanString(paper.publicationVenue?.name || paper.venue)
   const authors = (paper.authors || [])
-    .map(author => canonicalizeAuthorName(author, canonicalAuthors))
+    .map(author => cleanString(author?.name))
     .filter(Boolean)
 
   const publication = {
@@ -553,7 +518,7 @@ const paperSelectorRef = selector => {
   return ''
 }
 
-const fetchIncludedPapers = async ({ selectors = [], apiKey, canonicalAuthors, requestDelayMs }) => {
+const fetchIncludedPapers = async ({ selectors = [], apiKey, requestDelayMs }) => {
   const publications = []
 
   for (const selector of selectors) {
@@ -564,7 +529,7 @@ const fetchIncludedPapers = async ({ selectors = [], apiKey, canonicalAuthors, r
     url.searchParams.set('fields', PAPER_FIELDS)
 
     const paper = await fetchJsonWithRetry(url, apiKey)
-    publications.push(normalizeSemanticScholarPaper(paper, canonicalAuthors))
+    publications.push(normalizeSemanticScholarPaper(paper))
 
     if (requestDelayMs > 0) await sleep(requestDelayMs)
   }
@@ -572,7 +537,7 @@ const fetchIncludedPapers = async ({ selectors = [], apiKey, canonicalAuthors, r
   return publications
 }
 
-const fetchSemanticScholarPublications = async ({ config, canonicalAuthors, authors }) => {
+const fetchSemanticScholarPublications = async ({ config, authors }) => {
   const apiKey = process.env.SEMANTIC_SCHOLAR_KEY || ''
   const pageLimit = config.sync?.pageLimit || 100
   const requestDelayMs = config.sync?.requestDelayMs ?? 1000
@@ -596,14 +561,13 @@ const fetchSemanticScholarPublications = async ({ config, canonicalAuthors, auth
   for (const author of sourceAuthors) {
     const papers = await fetchAuthorPapers({ author, pageLimit, requestDelayMs, apiKey })
     stats.push({ name: author.name, count: papers.length })
-    publications.push(...papers.map(paper => normalizeSemanticScholarPaper(paper, canonicalAuthors)))
+    publications.push(...papers.map(paper => normalizeSemanticScholarPaper(paper)))
   }
 
   if (includedPaperSelectors.length > 0) {
     const includedPapers = await fetchIncludedPapers({
       selectors: includedPaperSelectors,
       apiKey,
-      canonicalAuthors,
       requestDelayMs,
     })
     stats.push({ name: 'explicitly included papers', count: includedPapers.length })
@@ -643,7 +607,6 @@ const main = async () => {
   await loadLocalEnv()
   const memberAuthors = await readMemberAuthors(config.memberData || DEFAULT_MEMBER_DATA_PATH)
   const configuredAuthors = [...memberAuthors, ...(config.authors || [])]
-  const canonicalAuthors = buildCanonicalAuthorMaps(configuredAuthors)
   const allOutputPath = config.outputs?.allPublications || 'Papers/papers.json'
 
   let fetchedPublications = []
@@ -653,7 +616,7 @@ const main = async () => {
     fetchedPublications = flattenPublications(await readJson(args.fromFile, {}))
     console.log(`Loaded ${fetchedPublications.length} publications from ${args.fromFile}.`)
   } else {
-    const result = await fetchSemanticScholarPublications({ config, canonicalAuthors, authors: configuredAuthors })
+    const result = await fetchSemanticScholarPublications({ config, authors: configuredAuthors })
     fetchedPublications = result.publications
     fetchStats = result.stats
   }
